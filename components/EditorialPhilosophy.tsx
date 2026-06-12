@@ -1,0 +1,5 @@
+import Reveal from "./Reveal";
+
+export default function EditorialPhilosophy() {
+  return <section className="relative overflow-hidden bg-espresso text-ivory"><div className="absolute -right-20 -top-40 font-serif text-[28rem] leading-none text-ivory/[.025]">“</div><div className="container-page section-space relative"><Reveal><p className="eyebrow text-bronze">Editorial philosophy</p><div className="mt-8 grid gap-12 lg:grid-cols-[1.3fr_.7fr]"><div><h2 className="display text-6xl sm:text-7xl lg:text-8xl">Your voice, clarified.</h2><blockquote className="mt-12 max-w-4xl font-serif text-3xl italic leading-tight text-ivory sm:text-5xl">“My role is not to rewrite your voice. My role is to help readers hear it more clearly.”</blockquote></div><p className="self-end border-t border-bronze/50 pt-7 leading-8 text-stone">The best editing does not erase the author. It removes the friction between the idea and the reader. Page Review Studio preserves what is distinct about your voice while strengthening structure, rhythm, clarity, and impact.</p></div></Reveal></div></section>;
+}
