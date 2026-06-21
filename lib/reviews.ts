@@ -10,10 +10,55 @@ export type ReviewPost = {
   pullQuote: string;
   coverTone: string;
   readingTime: string;
+  coverImage?: string;
+  heroImage?: string;
+  gallery?: { src: string; alt: string }[];
   body: string[];
 };
 
 export const reviewPosts: ReviewPost[] = [
+  {
+    slug: "the-seven-husbands-of-evelyn-hugo-review",
+    title: "A reverent look at identity, ambition, love, and the truths performance cannot hide",
+    bookTitle: "The Seven Husbands of Evelyn Hugo",
+    author: "Taylor Jenkins Reid",
+    date: "2026-06-21",
+    category: "Fiction",
+    excerpt:
+      "Krystal's first full review considers why Evelyn Hugo feels so vivid: a woman shaped by ambition, love, sacrifice, self-awareness, and the hard-won truth of her own life.",
+    socialExcerpt:
+      "The Seven Husbands of Evelyn Hugo is intimate, emotionally resonant, and wholly immersive - a story about identity, ambition, relationships, and the messy contradictions that make us human.",
+    pullQuote:
+      "The experience of reading this book feels like inhabiting Evelyn's life alongside her.",
+    coverTone: "bg-espresso",
+    readingTime: "6 min read",
+    coverImage: "/images/reviews/evelyn-hugo/cover.jpg",
+    heroImage: "/images/reviews/evelyn-hugo/post-4.png",
+    gallery: [
+      {
+        src: "/images/reviews/evelyn-hugo/post-1.png",
+        alt: "Editorial quote graphic for The Seven Husbands of Evelyn Hugo about inhabiting Evelyn's life.",
+      },
+      {
+        src: "/images/reviews/evelyn-hugo/post-2.png",
+        alt: "Editorial quote graphic for The Seven Husbands of Evelyn Hugo about Evelyn as a mosaic of competing truths.",
+      },
+      {
+        src: "/images/reviews/evelyn-hugo/post-5.png",
+        alt: "Editorial quote graphic for The Seven Husbands of Evelyn Hugo about Evelyn's believable character arc.",
+      },
+    ],
+    body: [
+      "I closed The Seven Husbands of Evelyn Hugo with an overwhelming sense of reverence and awe, both for Evelyn Hugo as a character and for Taylor Jenkins Reid as a writer. In fact, I am feeling a bit of trepidation even writing this review because Evelyn is so expertly crafted and her story is told with such skill that any attempt to summarize its brilliance feels destined to fall short. Nonetheless, I write.",
+      "In picking up this book, I had been hoping for an immersive reading experience: a compelling storyline and a deep character study. Taylor Jenkins Reid gave me that and more. The experience of reading this book feels like inhabiting Evelyn's life alongside her. The story unfolds through her memories, her choices, and her evolving understanding of herself. It is intimate, emotionally resonant, and wholly immersive. At no point did the story drag. There was always movement, always another emotional truth waiting to be uncovered.",
+      "Without question, characterization is this novel's greatest strength. Evelyn Hugo looms splendidly regal from the first page. Her presence commands attention, her words consideration. Each chapter of her story unfolds like a new revelation, and she is wonderfully complex: ambitious and compassionate, calculating and humane. Her character development spans a beautiful and believable arc, culminating in a conclusion that feels authentically, undeniably Evelyn.",
+      "I identified strongly with Evelyn as a character. The greatest pleasure of the novel is watching Evelyn navigate not only her life but herself. She is a mosaic of competing truths. It is a large part of what makes her feel so familiar, so real, and so profoundly human. In fact, if I had to choose one word to describe her, it would be real because of her unapologetic honesty about who she is. However you feel about Evelyn as the story unfolds, you know she is always giving you the truth of herself and her experience. Her self-awareness is not performative; it is authentic.",
+      "The emotional imprint this story left behind reminds me of The Silent Patient. The lingering effect feels remarkably similar. There is something about these characters that is both gripping and haunting. They return to me unexpectedly in remembered lines of dialogue, in my recall of their choices, in quiet moments when I find myself pondering all the ways I might have done exactly what they did. When I think back on characters like Monique, Harry, and Celia, I feel something distinct. I picture them vividly and even recall some of their conversations with other characters. They have taken up residence in my mind, and I have no intention of asking them to leave.",
+      "Several themes emerge throughout the novel, but the most compelling theme explores the complexity of relationships: how we define relationships, what sustains or destroys them, and what happens when relational boundaries begin to blur. Love, loyalty, sacrifice, resentment, and forgiveness are all examined with gritty nuance and refreshing honesty. Ambition is another prominent theme in the book. Success demands sacrifice. Evelyn's story invites us to consider what we are willing to sacrifice for success and whether we truly understand what we might be forfeiting in the process. Against the backdrop of old Hollywood - a culture obsessed with reinvention, appearances, and ambition - these questions feel critically important.",
+      "Perhaps the most powerful insight this novel offered me was the recognition that I am not fundamentally different from any of these characters, not even the ones whose choices I questioned. In some small way, I could see myself reflected in the people on the page. Their fears. Their desires. Their mistakes. The book is, ultimately, a candid exploration of the human condition, and I was captivated by its willingness to place so many complicated, uncomfortable facets of humanity on the examination table.",
+      "Few books earn a lasting place in my thoughts. The Seven Husbands of Evelyn Hugo did. It is not simply a novel about old Hollywood. It is a story about identity, ambition, relationships, and the messy contradictions that make us human. And long after the final page, what lingers is not the carefully crafted legend of Evelyn Hugo, but the hard-won truths she leaves behind about love, loss, and what matters when all the performances fall away.",
+    ],
+  },
   {
     slug: "lessons-in-chemistry-review",
     title: "A sharp, generous look at voice, agency, and reinvention",

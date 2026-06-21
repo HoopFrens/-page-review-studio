@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { formatReviewDate, reviewPosts } from "@/lib/reviews";
 import Button from "./Button";
@@ -26,15 +27,29 @@ export default function Reviews() {
             <article className="grid border-y hairline py-8 lg:grid-cols-[.72fr_1.28fr] lg:gap-10">
               <Link
                 href={`/reviews/${featured.slug}`}
-                className={`${featured.coverTone} flex min-h-80 flex-col justify-between p-8 text-ivory transition-transform hover:-translate-y-1`}
+                className={`${featured.coverTone} relative flex min-h-80 overflow-hidden p-8 text-ivory transition-transform hover:-translate-y-1`}
                 aria-label={`Read ${featured.bookTitle} review`}
               >
-                <div>
-                  <p className="eyebrow text-ivory/70">{featured.category}</p>
-                  <h3 className="mt-8 font-serif text-4xl leading-tight">{featured.bookTitle}</h3>
-                  <p className="mt-2 text-sm text-ivory/70">by {featured.author}</p>
+                {featured.heroImage ? (
+                  <>
+                    <Image
+                      src={featured.heroImage}
+                      alt={`${featured.bookTitle} review artwork`}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 30vw"
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/30 to-transparent" />
+                  </>
+                ) : null}
+                <div className="relative z-10 flex w-full flex-col justify-between">
+                  <div>
+                    <p className="eyebrow text-ivory/70">{featured.category}</p>
+                    <h3 className="mt-8 font-serif text-4xl leading-tight">{featured.bookTitle}</h3>
+                    <p className="mt-2 text-sm text-ivory/70">by {featured.author}</p>
+                  </div>
+                  <p className="font-serif text-2xl leading-8 text-ivory/90">"{featured.pullQuote}"</p>
                 </div>
-                <p className="font-serif text-2xl leading-8 text-ivory/90">"{featured.pullQuote}"</p>
               </Link>
               <div className="pt-8 lg:pt-0">
                 <div className="flex flex-wrap gap-x-5 gap-y-2 text-[.62rem] font-semibold uppercase tracking-[.15em] text-espresso/45">
