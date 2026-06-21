@@ -27,7 +27,7 @@ export default function Reviews() {
             <article className="grid border-y hairline py-8 lg:grid-cols-[.72fr_1.28fr] lg:gap-10">
               <Link
                 href={`/reviews/${featured.slug}`}
-                className={`${featured.coverTone} relative flex overflow-hidden p-3 text-ivory transition-transform hover:-translate-y-1`}
+                className={`${featured.coverTone} relative block self-start overflow-hidden text-ivory transition-transform hover:-translate-y-1`}
                 aria-label={`Read ${featured.bookTitle} review`}
               >
                 {featured.heroImage ? (
