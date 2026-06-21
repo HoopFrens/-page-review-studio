@@ -127,7 +127,7 @@ export default async function ReviewPostPage({ params }: Props) {
                       alt={image.alt}
                       fill
                       sizes="(max-width: 640px) 100vw, 33vw"
-                      className="object-cover object-center"
+                      className="object-cover object-left"
                     />
                   </div>
                 ))}
