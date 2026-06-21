@@ -29,26 +29,26 @@ export default function ReviewsPage() {
           <div className="container-page grid gap-8 lg:grid-cols-3">
             {reviewPosts.map((post) => (
               <article key={post.slug} className="flex h-full flex-col border-t hairline pt-7">
-                <div className={`${post.coverTone} relative mb-7 flex min-h-64 overflow-hidden p-7 text-ivory`}>
+                <div className={`${post.coverTone} relative mb-7 flex overflow-hidden p-3 text-ivory`}>
                   {post.heroImage ? (
-                    <>
+                    <div className={`relative w-full ${post.heroAspect ?? "aspect-[4/5]"}`}>
                       <Image
                         src={post.heroImage}
                         alt={`${post.bookTitle} review artwork`}
                         fill
                         sizes="(max-width: 1024px) 100vw, 33vw"
-                        className="object-cover"
+                        className="object-contain"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/35 to-transparent" />
-                    </>
-                  ) : null}
-                  <div className="relative z-10 flex w-full flex-col justify-between">
-                    <p className="eyebrow text-ivory/70">{post.category}</p>
-                    <div>
-                      <h2 className="font-serif text-4xl leading-tight">{post.bookTitle}</h2>
-                      <p className="mt-2 text-sm text-ivory/70">by {post.author}</p>
                     </div>
-                  </div>
+                  ) : (
+                    <div className="flex min-h-56 w-full flex-col justify-between p-4">
+                      <p className="eyebrow text-ivory/70">{post.category}</p>
+                      <div>
+                        <h2 className="font-serif text-4xl leading-tight">{post.bookTitle}</h2>
+                        <p className="mt-2 text-sm text-ivory/70">by {post.author}</p>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <div className="flex flex-wrap gap-x-5 gap-y-2 text-[.62rem] font-semibold uppercase tracking-[.15em] text-espresso/45">
                   <span>{formatReviewDate(post.date)}</span>

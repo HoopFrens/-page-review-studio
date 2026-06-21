@@ -12,7 +12,8 @@ export type ReviewPost = {
   readingTime: string;
   coverImage?: string;
   heroImage?: string;
-  gallery?: { src: string; alt: string }[];
+  heroAspect?: string;
+  gallery?: { src: string; alt: string; width: number; height: number }[];
   body: string[];
 };
 
@@ -34,18 +35,25 @@ export const reviewPosts: ReviewPost[] = [
     readingTime: "6 min read",
     coverImage: "/images/reviews/evelyn-hugo/cover.jpg",
     heroImage: "/images/reviews/evelyn-hugo/post-4.png",
+    heroAspect: "aspect-[561/701]",
     gallery: [
       {
         src: "/images/reviews/evelyn-hugo/post-1.png",
         alt: "Editorial quote graphic for The Seven Husbands of Evelyn Hugo about inhabiting Evelyn's life.",
+        width: 374,
+        height: 701,
       },
       {
         src: "/images/reviews/evelyn-hugo/post-2.png",
         alt: "Editorial quote graphic for The Seven Husbands of Evelyn Hugo about Evelyn as a mosaic of competing truths.",
+        width: 374,
+        height: 701,
       },
       {
         src: "/images/reviews/evelyn-hugo/post-5.png",
         alt: "Editorial quote graphic for The Seven Husbands of Evelyn Hugo about Evelyn's believable character arc.",
+        width: 561,
+        height: 701,
       },
     ],
     body: [

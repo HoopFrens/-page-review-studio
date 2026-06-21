@@ -46,28 +46,28 @@ export default async function ReviewPostPage({ params }: Props) {
         <article>
           <header className="bg-linen py-16 sm:py-24">
             <div className="container-page grid gap-12 lg:grid-cols-[.7fr_1.3fr]">
-              <div className={`${post.coverTone} relative flex min-h-96 overflow-hidden p-8 text-ivory`}>
+              <div className={`${post.coverTone} flex items-center justify-center overflow-hidden p-3 text-ivory`}>
                 {post.heroImage ? (
-                  <>
+                  <div className={`relative w-full ${post.heroAspect ?? "aspect-[4/5]"}`}>
                     <Image
                       src={post.heroImage}
                       alt={`${post.bookTitle} review artwork`}
                       fill
                       priority
                       sizes="(max-width: 1024px) 100vw, 34vw"
-                      className="object-cover"
+                      className="object-contain"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/40 to-transparent" />
-                  </>
-                ) : null}
-                <div className="relative z-10 flex min-h-80 w-full flex-col justify-between">
-                  <p className="eyebrow text-ivory/70">{post.category}</p>
-                  <div>
-                    <h1 className="font-serif text-5xl leading-none sm:text-6xl">{post.bookTitle}</h1>
-                    <p className="mt-4 text-sm text-ivory/70">by {post.author}</p>
                   </div>
-                  <p className="font-serif text-2xl leading-8 text-ivory/90">"{post.pullQuote}"</p>
-                </div>
+                ) : (
+                  <div className="flex min-h-80 w-full flex-col justify-between p-5">
+                    <p className="eyebrow text-ivory/70">{post.category}</p>
+                    <div>
+                      <h1 className="font-serif text-5xl leading-none sm:text-6xl">{post.bookTitle}</h1>
+                      <p className="mt-4 text-sm text-ivory/70">by {post.author}</p>
+                    </div>
+                    <p className="font-serif text-2xl leading-8 text-ivory/90">"{post.pullQuote}"</p>
+                  </div>
+                )}
               </div>
               <div className="self-end">
                 <Link
@@ -101,13 +101,13 @@ export default async function ReviewPostPage({ params }: Props) {
               <aside className="space-y-7 lg:sticky lg:top-24 lg:self-start">
                 {post.coverImage ? (
                   <div className="border border-bronze/40 bg-linen p-3">
-                    <div className="relative aspect-[2/3] overflow-hidden bg-espresso">
+                    <div className="relative aspect-[134/218] overflow-hidden bg-espresso">
                       <Image
                         src={post.coverImage}
                         alt={`${post.bookTitle} book cover`}
                         fill
                         sizes="(max-width: 1024px) 50vw, 18rem"
-                        className="object-cover"
+                        className="object-contain"
                       />
                     </div>
                   </div>
@@ -119,11 +119,17 @@ export default async function ReviewPostPage({ params }: Props) {
               </aside>
             </div>
             {post.gallery ? (
-              <div className="mt-20 grid gap-5 sm:grid-cols-3">
+              <div className="mt-20 grid items-start gap-5 sm:grid-cols-3">
                 {post.gallery.map((image) => (
-                  <div key={image.src} className="relative aspect-[4/5] overflow-hidden bg-espresso">
-                    <Image src={image.src} alt={image.alt} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover" />
-                  </div>
+                  <Image
+                    key={image.src}
+                    src={image.src}
+                    alt={image.alt}
+                    width={image.width}
+                    height={image.height}
+                    sizes="(max-width: 640px) 100vw, 33vw"
+                    className="h-auto w-full bg-espresso object-contain"
+                  />
                 ))}
               </div>
             ) : null}
