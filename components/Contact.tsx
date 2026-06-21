@@ -3,9 +3,9 @@
 import { useState, type FormEvent } from "react";
 import SectionHeading from "./SectionHeading";
 
-const projectTypes = ["Developmental editing", "Proofreading", "Ghostwriting", "Manuscript development", "Book formatting", "Thought leadership content", "Not sure yet"];
+const projectTypes = ["Line editing", "Not sure yet"];
 const statuses = ["Idea or outline", "In progress", "Complete draft", "Previously edited"];
-const budgets = ["Under $1,000", "$1,000–$2,500", "$2,500–$5,000", "$5,000–$10,000", "$10,000+"];
+const budgets = ["$2,500–$5,000", "$5,000–$10,000", "$10,000+", "Not sure yet"];
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
