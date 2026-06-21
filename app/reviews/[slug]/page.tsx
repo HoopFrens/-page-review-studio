@@ -101,7 +101,7 @@ export default async function ReviewPostPage({ params }: Props) {
               <aside className="space-y-7 lg:sticky lg:top-24 lg:self-start">
                 {post.coverImage ? (
                   <div className="border border-bronze/40 bg-linen p-3">
-                    <div className="relative aspect-[134/218] overflow-hidden bg-espresso">
+                    <div className={`relative ${post.coverAspect ?? "aspect-[2/3]"} overflow-hidden bg-espresso`}>
                       <Image
                         src={post.coverImage}
                         alt={`${post.bookTitle} book cover`}

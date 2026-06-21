@@ -11,6 +11,7 @@ export type ReviewPost = {
   coverTone: string;
   readingTime: string;
   coverImage?: string;
+  coverAspect?: string;
   heroImage?: string;
   heroAspect?: string;
   gallery?: { src: string; alt: string; width: number; height: number }[];
@@ -34,6 +35,7 @@ export const reviewPosts: ReviewPost[] = [
     coverTone: "bg-espresso",
     readingTime: "6 min read",
     coverImage: "/images/reviews/evelyn-hugo/cover.jpg",
+    coverAspect: "aspect-[1592/2475]",
     heroImage: "/images/reviews/evelyn-hugo/post-4.png",
     heroAspect: "aspect-[561/701]",
     gallery: [
