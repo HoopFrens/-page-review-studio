@@ -121,15 +121,15 @@ export default async function ReviewPostPage({ params }: Props) {
             {post.gallery ? (
               <div className="mt-20 grid items-start gap-5 sm:grid-cols-3">
                 {post.gallery.map((image) => (
-                  <Image
-                    key={image.src}
-                    src={image.src}
-                    alt={image.alt}
-                    width={image.width}
-                    height={image.height}
-                    sizes="(max-width: 640px) 100vw, 33vw"
-                    className="h-auto w-full bg-espresso object-contain"
-                  />
+                  <div key={image.src} className="relative aspect-[374/701] overflow-hidden bg-espresso">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 33vw"
+                      className="object-cover object-center"
+                    />
+                  </div>
                 ))}
               </div>
             ) : null}
