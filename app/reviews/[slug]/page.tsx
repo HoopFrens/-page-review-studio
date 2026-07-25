@@ -44,9 +44,38 @@ export default async function ReviewPostPage({ params }: Props) {
       <Navigation />
       <main>
         <article>
-          <header className="bg-linen py-16 sm:py-24">
-            <div className="container-page grid gap-12 lg:grid-cols-[.7fr_1.3fr]">
-              <div className={`${post.coverTone} flex items-center justify-center overflow-hidden p-3 text-ivory`}>
+          <header
+            className={`relative isolate overflow-hidden border-y py-16 sm:py-24 ${
+              post.heroImage ? "border-bronze/35 bg-[#063f31]" : "border-transparent bg-linen"
+            }`}
+          >
+            {post.heroImage ? (
+              <>
+                <Image
+                  src={post.heroImage}
+                  alt=""
+                  fill
+                  priority
+                  sizes="100vw"
+                  className="absolute -z-20 scale-105 object-cover object-center opacity-[.16] blur-[3px] saturate-75"
+                  aria-hidden="true"
+                />
+                <div
+                  className="absolute inset-0 -z-10 bg-[linear-gradient(108deg,rgba(3,45,34,.94)_0%,rgba(8,89,65,.82)_48%,rgba(35,24,20,.9)_100%)]"
+                  aria-hidden="true"
+                />
+                <div
+                  className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_28%_45%,rgba(176,138,87,.18),transparent_37%)]"
+                  aria-hidden="true"
+                />
+              </>
+            ) : null}
+            <div className="container-page relative z-10 grid gap-12 lg:grid-cols-[.7fr_1.3fr]">
+              <div
+                className={`${post.coverTone} flex items-center justify-center overflow-hidden p-3 text-ivory ${
+                  post.heroImage ? "border border-bronze/45 bg-black/35 shadow-[0_28px_80px_rgba(0,0,0,.28)]" : ""
+                }`}
+              >
                 {post.heroImage ? (
                   <div className={`relative w-full ${post.heroAspect ?? "aspect-[4/5]"}`}>
                     <Image
@@ -72,16 +101,34 @@ export default async function ReviewPostPage({ params }: Props) {
               <div className="self-end">
                 <Link
                   href="/reviews"
-                  className="text-[.67rem] font-semibold uppercase tracking-[.16em] text-terracotta transition-colors hover:text-espresso"
+                  className={`text-[.67rem] font-semibold uppercase tracking-[.16em] transition-colors ${
+                    post.heroImage ? "text-[#e7bd55] hover:text-ivory" : "text-terracotta hover:text-espresso"
+                  }`}
                 >
                   All reviews
                 </Link>
-                <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-[.62rem] font-semibold uppercase tracking-[.15em] text-espresso/45">
+                <div
+                  className={`mt-8 flex flex-wrap gap-x-5 gap-y-2 text-[.62rem] font-semibold uppercase tracking-[.15em] ${
+                    post.heroImage ? "text-ivory/60" : "text-espresso/45"
+                  }`}
+                >
                   <span>{formatReviewDate(post.date)}</span>
                   <span>{post.readingTime}</span>
                 </div>
-                <h2 className="display mt-6 max-w-4xl text-5xl text-espresso sm:text-6xl lg:text-7xl">{post.title}</h2>
-                <p className="mt-8 max-w-2xl text-lg leading-8 text-espresso/70">{post.excerpt}</p>
+                <h2
+                  className={`display mt-6 max-w-4xl text-5xl sm:text-6xl lg:text-7xl ${
+                    post.heroImage ? "text-ivory" : "text-espresso"
+                  }`}
+                >
+                  {post.title}
+                </h2>
+                <p
+                  className={`mt-8 max-w-2xl text-lg leading-8 ${
+                    post.heroImage ? "text-ivory/75" : "text-espresso/70"
+                  }`}
+                >
+                  {post.excerpt}
+                </p>
               </div>
             </div>
           </header>
