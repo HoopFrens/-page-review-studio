@@ -13,21 +13,21 @@ export default function Reviews() {
     <section id="reviews" className="section-space bg-linen">
       <div className="container-page">
         <Reveal>
-          <div className="grid gap-12 lg:grid-cols-[.82fr_1.18fr]">
-            <div>
+          <div>
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
               <SectionHeading
                 eyebrow="Full reviews"
                 title="A home base for every book Krystal reviews."
                 intro="Social posts can start the conversation. The website now gives each review room to breathe with the full reflection, craft notes, and reading experience in one lasting place."
               />
-              <Button href="/reviews" variant="outline" className="mt-9">
+              <Button href="/reviews" variant="outline" className="justify-self-start lg:mb-1">
                 Read all reviews
               </Button>
             </div>
-            <article className="grid border-y hairline py-8 lg:grid-cols-[.72fr_1.28fr] lg:gap-10">
+            <article className="mt-14 grid overflow-hidden border-y hairline lg:grid-cols-[22rem_minmax(0,1fr)] xl:grid-cols-[25rem_minmax(0,1fr)]">
               <Link
                 href={`/reviews/${featured.slug}`}
-                className={`${featured.coverTone} relative block self-start overflow-hidden text-ivory transition-transform hover:-translate-y-1`}
+                className={`${featured.coverTone} relative block overflow-hidden border-b hairline text-ivory lg:border-b-0 lg:border-r`}
                 aria-label={`Read ${featured.bookTitle} review`}
               >
                 {featured.heroImage ? (
@@ -36,8 +36,8 @@ export default function Reviews() {
                       src={featured.heroImage}
                       alt={`${featured.bookTitle} review artwork`}
                       fill
-                      sizes="(max-width: 1024px) 100vw, 30vw"
-                      className="object-contain"
+                      sizes="(max-width: 1024px) 100vw, 25rem"
+                      className="object-contain transition-transform duration-500 hover:scale-[1.015]"
                     />
                   </div>
                 ) : (
@@ -51,7 +51,7 @@ export default function Reviews() {
                   </div>
                 )}
               </Link>
-              <div className="pt-8 lg:pt-0">
+              <div className="flex flex-col justify-center px-6 py-10 sm:px-10 lg:px-12 xl:px-16">
                 <div className="flex flex-wrap gap-x-5 gap-y-2 text-[.62rem] font-semibold uppercase tracking-[.15em] text-espresso/45">
                   <span>{formatReviewDate(featured.date)}</span>
                   <span>{featured.readingTime}</span>
