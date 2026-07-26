@@ -45,8 +45,10 @@ export default async function ReviewPostPage({ params }: Props) {
       <main>
         <article>
           <header
-            className={`relative isolate overflow-hidden border-y py-16 sm:py-24 ${
-              post.heroImage ? "border-bronze/35 bg-[#063f31]" : "border-transparent bg-linen"
+            className={`relative isolate overflow-hidden border-y ${
+              post.heroImage
+                ? "border-bronze/35 bg-[#063f31]"
+                : "border-transparent bg-linen py-16 sm:py-24"
             }`}
           >
             {post.heroImage ? (
@@ -70,20 +72,28 @@ export default async function ReviewPostPage({ params }: Props) {
                 />
               </>
             ) : null}
-            <div className="container-page relative z-10 grid gap-12 lg:grid-cols-[.7fr_1.3fr]">
+            <div
+              className={`container-page relative z-10 grid ${
+                post.heroImage
+                  ? "gap-0 lg:grid-cols-[26rem_minmax(0,1fr)] xl:grid-cols-[30rem_minmax(0,1fr)]"
+                  : "gap-12 lg:grid-cols-[.7fr_1.3fr]"
+              }`}
+            >
               <div
-                className={`${post.coverTone} flex items-center justify-center overflow-hidden p-3 text-ivory ${
-                  post.heroImage ? "border border-bronze/45 bg-black/35 shadow-[0_28px_80px_rgba(0,0,0,.28)]" : ""
+                className={`${post.coverTone} flex items-center justify-center overflow-hidden text-ivory ${
+                  post.heroImage
+                    ? "border-x border-bronze/45 bg-black/35 lg:min-h-[32.5rem] xl:min-h-[37.5rem]"
+                    : "p-3"
                 }`}
               >
                 {post.heroImage ? (
-                  <div className={`relative w-full ${post.heroAspect ?? "aspect-[4/5]"}`}>
+                  <div className={`relative w-full ${post.heroAspect ?? "aspect-[4/5]"} lg:h-full lg:aspect-auto`}>
                     <Image
                       src={post.heroImage}
                       alt={`${post.bookTitle} review artwork`}
                       fill
                       priority
-                      sizes="(max-width: 1024px) 100vw, 34vw"
+                      sizes="(max-width: 1024px) 100vw, 30rem"
                       className="object-contain"
                     />
                   </div>
@@ -98,7 +108,13 @@ export default async function ReviewPostPage({ params }: Props) {
                   </div>
                 )}
               </div>
-              <div className="self-end">
+              <div
+                className={
+                  post.heroImage
+                    ? "flex flex-col justify-center border-t border-bronze/35 px-2 py-12 sm:px-8 lg:border-l lg:border-t-0 lg:px-12 xl:px-16"
+                    : "self-end"
+                }
+              >
                 <Link
                   href="/reviews"
                   className={`text-[.67rem] font-semibold uppercase tracking-[.16em] transition-colors ${
@@ -116,7 +132,7 @@ export default async function ReviewPostPage({ params }: Props) {
                   <span>{post.readingTime}</span>
                 </div>
                 <h2
-                  className={`display mt-6 max-w-4xl text-5xl sm:text-6xl lg:text-7xl ${
+                  className={`display mt-6 max-w-4xl text-5xl sm:text-6xl ${
                     post.heroImage ? "text-ivory" : "text-espresso"
                   }`}
                 >
