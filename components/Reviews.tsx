@@ -24,20 +24,20 @@ export default function Reviews() {
                 Read all reviews
               </Button>
             </div>
-            <article className="mt-14 grid overflow-hidden border-y hairline lg:grid-cols-[22rem_minmax(0,1fr)] xl:grid-cols-[25rem_minmax(0,1fr)]">
+            <article className="mt-14 grid overflow-hidden border-y hairline lg:min-h-[34rem] lg:grid-cols-[minmax(0,1.08fr)_minmax(0,.92fr)]">
               <Link
                 href={`/reviews/${featured.slug}`}
-                className={`${featured.coverTone} relative block overflow-hidden border-b hairline text-ivory lg:border-b-0 lg:border-r`}
+                className={`${featured.coverTone} group relative block overflow-hidden border-b hairline text-ivory lg:border-b-0 lg:border-r`}
                 aria-label={`Read ${featured.bookTitle} review`}
               >
                 {featured.heroImage ? (
-                  <div className={`relative w-full ${featured.heroAspect ?? "aspect-[4/5]"}`}>
+                  <div className={`relative w-full ${featured.heroAspect ?? "aspect-[4/5]"} lg:h-full lg:min-h-[34rem] lg:aspect-auto`}>
                     <Image
                       src={featured.heroImage}
-                      alt={`${featured.bookTitle} review artwork`}
+                      alt={`Gold rings on green velvet for ${featured.bookTitle}`}
                       fill
-                      sizes="(max-width: 1024px) 100vw, 25rem"
-                      className="object-contain transition-transform duration-500 hover:scale-[1.015]"
+                      sizes="(max-width: 1024px) 100vw, 55vw"
+                      className="object-cover object-[54%_58%] transition-transform duration-700 group-hover:scale-[1.015]"
                     />
                   </div>
                 ) : (

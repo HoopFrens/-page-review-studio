@@ -47,7 +47,7 @@ export default async function ReviewPostPage({ params }: Props) {
           <header
             className={`relative isolate overflow-hidden border-y ${
               post.heroImage
-                ? "border-bronze/35 bg-[#063f31]"
+                ? "border-bronze/35 bg-espresso"
                 : "border-transparent bg-linen py-16 sm:py-24"
             }`}
           >
@@ -55,49 +55,31 @@ export default async function ReviewPostPage({ params }: Props) {
               <>
                 <Image
                   src={post.heroImage}
-                  alt=""
+                  alt={`Gold rings on green velvet for ${post.bookTitle}`}
                   fill
                   priority
                   sizes="100vw"
-                  className="absolute -z-20 scale-105 object-cover object-center opacity-[.16] blur-[3px] saturate-75"
+                  className="absolute -z-20 object-cover object-[56%_58%] sm:object-[54%_56%] lg:object-[center_58%]"
+                />
+                <div
+                  className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(2,14,11,.96)_0%,rgba(3,31,23,.9)_42%,rgba(3,38,29,.58)_68%,rgba(13,13,11,.3)_100%)]"
                   aria-hidden="true"
                 />
                 <div
-                  className="absolute inset-0 -z-10 bg-[linear-gradient(108deg,rgba(3,45,34,.94)_0%,rgba(8,89,65,.82)_48%,rgba(35,24,20,.9)_100%)]"
-                  aria-hidden="true"
-                />
-                <div
-                  className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_28%_45%,rgba(176,138,87,.18),transparent_37%)]"
+                  className="absolute inset-0 -z-10 bg-[linear-gradient(0deg,rgba(3,18,14,.72)_0%,transparent_40%,rgba(0,0,0,.18)_100%)]"
                   aria-hidden="true"
                 />
               </>
             ) : null}
             <div
-              className={`container-page relative z-10 grid ${
+              className={`container-page relative z-10 ${
                 post.heroImage
-                  ? "gap-0 lg:grid-cols-[26rem_minmax(0,1fr)] xl:grid-cols-[30rem_minmax(0,1fr)]"
-                  : "gap-12 lg:grid-cols-[.7fr_1.3fr]"
+                  ? "flex min-h-[44rem] items-center py-14 sm:py-20 lg:min-h-[42rem]"
+                  : "grid gap-12 lg:grid-cols-[.7fr_1.3fr]"
               }`}
             >
-              <div
-                className={`${post.coverTone} flex items-center justify-center overflow-hidden text-ivory ${
-                  post.heroImage
-                    ? "border-x border-bronze/45 bg-black/35 lg:min-h-[32.5rem] xl:min-h-[37.5rem]"
-                    : "p-3"
-                }`}
-              >
-                {post.heroImage ? (
-                  <div className={`relative w-full ${post.heroAspect ?? "aspect-[4/5]"} lg:h-full lg:aspect-auto`}>
-                    <Image
-                      src={post.heroImage}
-                      alt={`${post.bookTitle} review artwork`}
-                      fill
-                      priority
-                      sizes="(max-width: 1024px) 100vw, 30rem"
-                      className="object-contain"
-                    />
-                  </div>
-                ) : (
+              {!post.heroImage ? (
+                <div className={`${post.coverTone} flex items-center justify-center overflow-hidden p-3 text-ivory`}>
                   <div className="flex min-h-80 w-full flex-col justify-between p-5">
                     <p className="eyebrow text-ivory/70">{post.category}</p>
                     <div>
@@ -106,12 +88,12 @@ export default async function ReviewPostPage({ params }: Props) {
                     </div>
                     <p className="font-serif text-2xl leading-8 text-ivory/90">"{post.pullQuote}"</p>
                   </div>
-                )}
-              </div>
+                </div>
+              ) : null}
               <div
                 className={
                   post.heroImage
-                    ? "flex flex-col justify-center border-t border-bronze/35 px-2 py-12 sm:px-8 lg:border-l lg:border-t-0 lg:px-12 xl:px-16"
+                    ? "max-w-2xl"
                     : "self-end"
                 }
               >
@@ -132,8 +114,8 @@ export default async function ReviewPostPage({ params }: Props) {
                   <span>{post.readingTime}</span>
                 </div>
                 <h2
-                  className={`display mt-6 max-w-4xl text-5xl sm:text-6xl ${
-                    post.heroImage ? "text-ivory" : "text-espresso"
+                  className={`display mt-6 max-w-4xl text-5xl tracking-normal sm:text-6xl ${
+                    post.heroImage ? "text-ivory lg:text-[4rem]" : "text-espresso lg:text-7xl"
                   }`}
                 >
                   {post.title}
