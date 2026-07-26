@@ -59,7 +59,7 @@ export default async function ReviewPostPage({ params }: Props) {
                   fill
                   priority
                   sizes="100vw"
-                  className="absolute -z-20 object-cover object-[56%_58%] sm:object-[54%_56%] lg:object-[center_58%]"
+                  className="absolute -z-20 object-cover object-[70%_58%] sm:object-[70%_56%] lg:object-[center_58%]"
                 />
                 <div
                   className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(2,14,11,.96)_0%,rgba(3,31,23,.9)_42%,rgba(3,38,29,.58)_68%,rgba(13,13,11,.3)_100%)]"

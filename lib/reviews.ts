@@ -36,7 +36,7 @@ export const reviewPosts: ReviewPost[] = [
     readingTime: "6 min read",
     coverImage: "/images/reviews/evelyn-hugo/cover.jpg",
     coverAspect: "aspect-[1592/2475]",
-    heroImage: "/images/reviews/evelyn-hugo/hero-rings.jpg",
+    heroImage: "/images/reviews/evelyn-hugo/hero-rings-focused.jpg",
     heroAspect: "aspect-[3/2]",
     gallery: [
       {
