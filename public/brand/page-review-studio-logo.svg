@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 260" role="img" aria-labelledby="title desc">
+  <title id="title">Page Review Studio logo</title>
+  <desc id="desc">The Page Review Studio mark beside a refined editorial wordmark.</desc>
+  <rect width="980" height="260" fill="#F6F2EC"/>
+  <g transform="translate(56 38) scale(2.875)">
+    <path d="M16 8h24l12 12v36H16z" fill="#F6F2EC" stroke="#231814" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M40 8v12h12" fill="none" stroke="#625650" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M24 20h13M24 28h17M24 36h10" fill="none" stroke="#625650" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M47 18c-7.8.4-14.7 4.8-18.2 11.8 7.8-.5 14.3-4.9 18.2-11.8Z" fill="#B08A57" stroke="#231814" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M47 18 28 45" fill="none" stroke="#231814" stroke-width="2.7" stroke-linecap="round"/>
+    <path d="M37 23c-1.8 1.8-3.5 3.7-5.1 5.8M42 20.4c-1.4 2.2-3 4.3-4.7 6.4" fill="none" stroke="#231814" stroke-width="1.1" stroke-linecap="round"/>
+    <path d="m28 45-4 7 7-3 2.5-6.3Z" fill="#B96D52" stroke="#231814" stroke-width="1.2" stroke-linejoin="round"/>
+    <path d="M20 51c8.8-3.3 18.2-3.2 27.4.2" fill="none" stroke="#B08A57" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+  <text x="270" y="130" fill="#231814" font-family="Cormorant Garamond, Georgia, serif" font-size="76" font-weight="600" letter-spacing="1">Page Review</text>
+  <text x="276" y="178" fill="#B08A57" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="15">STUDIO</text>
+</svg>
