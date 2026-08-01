@@ -11,10 +11,19 @@ export type ReviewPost = {
   coverTone: string;
   readingTime: string;
   coverImage?: string;
+  coverAlt?: string;
   coverAspect?: string;
   heroImage?: string;
+  heroAlt?: string;
   heroAspect?: string;
-  gallery?: { src: string; alt: string; width: number; height: number }[];
+  gallery?: {
+    _key?: string;
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+    quote?: string;
+  }[];
   body: string[];
 };
 
@@ -35,27 +44,32 @@ export const reviewPosts: ReviewPost[] = [
     coverTone: "bg-espresso",
     readingTime: "6 min read",
     coverImage: "/images/reviews/evelyn-hugo/cover.jpg",
+    coverAlt: "The Seven Husbands of Evelyn Hugo by Taylor Jenkins Reid book cover",
     coverAspect: "aspect-[1592/2475]",
     heroImage: "/images/reviews/evelyn-hugo/hero-rings-focused.jpg",
+    heroAlt: "Gold wedding rings resting on deep green velvet",
     heroAspect: "aspect-[3/2]",
     gallery: [
       {
-        src: "/images/reviews/evelyn-hugo/post-1.png",
-        alt: "Editorial quote graphic for The Seven Husbands of Evelyn Hugo about inhabiting Evelyn's life.",
-        width: 374,
-        height: 701,
+        src: "/images/reviews/evelyn-hugo/post-2-emerald-hd.png",
+        alt: "Quote graphic: The greatest pleasure of the novel is watching Evelyn navigate not only her life but herself. She is a mosaic of competing truths.",
+        width: 917,
+        height: 1716,
+        quote: "She is a mosaic of competing truths.",
       },
       {
-        src: "/images/reviews/evelyn-hugo/post-2.png",
-        alt: "Editorial quote graphic for The Seven Husbands of Evelyn Hugo about Evelyn as a mosaic of competing truths.",
-        width: 374,
-        height: 701,
+        src: "/images/reviews/evelyn-hugo/post-1-emerald-hd.png",
+        alt: "Quote graphic: The experience of reading this book feels like inhabiting Evelyn's life alongside her. The story unfolds through her memories, her choices, and her evolving understanding of herself.",
+        width: 916,
+        height: 1717,
+        quote: "The experience of reading this book feels like inhabiting Evelyn's life alongside her.",
       },
       {
         src: "/images/reviews/evelyn-hugo/post-5.png",
-        alt: "Editorial quote graphic for The Seven Husbands of Evelyn Hugo about Evelyn's believable character arc.",
-        width: 561,
-        height: 701,
+        alt: "Quote graphic: Evelyn's character development spans a beautiful and believable arc, culminating in a conclusion that feels authentically, undeniably Evelyn.",
+        width: 916,
+        height: 1716,
+        quote: "Evelyn's character development spans a beautiful and believable arc.",
       },
     ],
     body: [
