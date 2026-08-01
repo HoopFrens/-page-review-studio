@@ -1,4 +1,6 @@
+import { PortableText, type PortableTextBlock, type PortableTextComponents } from "@portabletext/react";
 import Image from "next/image";
+import type { ReactNode } from "react";
 import type { ReviewPost } from "@/lib/reviews";
 
 type ReviewGraphic = NonNullable<ReviewPost["gallery"]>[number];
@@ -7,7 +9,7 @@ type ReviewContentProps = {
   post: ReviewPost;
 };
 
-function BodyParagraph({ children, lead = false }: { children: string; lead?: boolean }) {
+function BodyParagraph({ children, lead = false }: { children: ReactNode; lead?: boolean }) {
   return (
     <p
       className={`${
@@ -19,6 +21,43 @@ function BodyParagraph({ children, lead = false }: { children: string; lead?: bo
       {children}
     </p>
   );
+}
+
+function ReviewBody({ blocks, leadFirst = false }: { blocks: PortableTextBlock[]; leadFirst?: boolean }) {
+  const components: PortableTextComponents = {
+    block: {
+      normal: ({ children, index }) => (
+        <BodyParagraph lead={leadFirst && index === 0}>{children}</BodyParagraph>
+      ),
+      h2: ({ children }) => (
+        <h2 className="mb-6 mt-12 font-serif text-4xl leading-tight text-espresso">{children}</h2>
+      ),
+      blockquote: ({ children }) => (
+        <blockquote className="my-10 border-l-2 border-terracotta pl-6 font-serif text-3xl leading-10 text-espresso">
+          {children}
+        </blockquote>
+      ),
+    },
+    marks: {
+      link: ({ children, value }) => {
+        const href = typeof value?.href === "string" ? value.href : "#";
+        const external = /^https?:\/\//.test(href);
+
+        return (
+          <a
+            href={href}
+            className="text-terracotta underline decoration-terracotta/35 underline-offset-4 transition-colors hover:text-espresso"
+            target={external ? "_blank" : undefined}
+            rel={external ? "noreferrer" : undefined}
+          >
+            {children}
+          </a>
+        );
+      },
+    },
+  };
+
+  return <PortableText value={blocks} components={components} />;
 }
 
 function SocialCaption({ children }: { children: string }) {
@@ -43,7 +82,10 @@ function BookAside({ post, showQuote = true }: { post: ReviewPost; showQuote?: b
       {post.coverImage ? (
         <>
           <div className="border border-bronze/40 bg-linen p-3 shadow-[12px_14px_0_rgba(176,138,87,.12)]">
-            <div className={`relative ${post.coverAspect ?? "aspect-[2/3]"} overflow-hidden bg-espresso`}>
+            <div
+              className="relative overflow-hidden bg-espresso"
+              style={{ aspectRatio: post.coverAspect ?? 2 / 3 }}
+            >
               <Image
                 src={post.coverImage}
                 alt={post.coverAlt ?? `${post.bookTitle} book cover`}
@@ -229,9 +271,7 @@ function StandardReviewContent({ post }: ReviewContentProps) {
     <div className="container-page py-16 sm:py-24">
       <div className="mx-auto grid max-w-6xl gap-14 lg:grid-cols-[minmax(0,1fr)_18rem]">
         <div className="max-w-3xl">
-          {post.body.map((paragraph, index) => (
-            <BodyParagraph key={paragraph} lead={index === 0}>{paragraph}</BodyParagraph>
-          ))}
+          <ReviewBody blocks={post.body} leadFirst />
           <div className="mt-14">
             <SocialCaption>{post.socialExcerpt}</SocialCaption>
           </div>
@@ -251,9 +291,7 @@ function GalleryStageReviewContent({ post, graphics }: ReviewContentProps & { gr
     <>
       <div className="container-page py-16 sm:py-24">
         <div className="mx-auto max-w-3xl">
-          {openingParagraphs.map((paragraph, index) => (
-            <BodyParagraph key={paragraph} lead={index === 0}>{paragraph}</BodyParagraph>
-          ))}
+          <ReviewBody blocks={openingParagraphs} leadFirst />
         </div>
       </div>
 
@@ -261,9 +299,7 @@ function GalleryStageReviewContent({ post, graphics }: ReviewContentProps & { gr
 
       <div className="container-page py-16 sm:py-24">
         <div className="mx-auto max-w-3xl">
-          {closingParagraphs.map((paragraph) => (
-            <BodyParagraph key={paragraph}>{paragraph}</BodyParagraph>
-          ))}
+          <ReviewBody blocks={closingParagraphs} />
           <div className="mt-14">
             <SocialCaption>{post.socialExcerpt}</SocialCaption>
           </div>

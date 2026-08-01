@@ -4,29 +4,34 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
+import SanityPreview from "@/components/SanityPreview";
 import ReviewContent from "@/components/reviews/ReviewContent";
-import { formatReviewDate, getReviewPost, reviewPosts } from "@/lib/reviews";
+import { getReviewPost, getReviewSlugs } from "@/lib/reviewRepository";
+import { formatReviewDate } from "@/lib/reviews";
 
 type Props = { params: Promise<{ slug: string }> };
 
-export function generateStaticParams() {
-  return reviewPosts.map((post) => ({ slug: post.slug }));
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  const slugs = await getReviewSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const post = getReviewPost(slug);
+  const post = await getReviewPost(slug, { stega: false });
 
   if (!post) {
     return { title: "Review Not Found | Page Review Studio" };
   }
 
   return {
-    title: `${post.bookTitle} Review | Page Review Studio`,
-    description: post.socialExcerpt,
+    title: post.seoTitle || `${post.bookTitle} Review | Page Review Studio`,
+    description: post.seoDescription || post.socialExcerpt,
     openGraph: {
-      title: `${post.bookTitle} Review`,
-      description: post.socialExcerpt,
+      title: post.seoTitle || `${post.bookTitle} Review`,
+      description: post.seoDescription || post.socialExcerpt,
       type: "article",
       publishedTime: post.date,
       images: post.heroImage ? [post.heroImage] : undefined,
@@ -36,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ReviewPostPage({ params }: Props) {
   const { slug } = await params;
-  const post = getReviewPost(slug);
+  const post = await getReviewPost(slug);
 
   if (!post) notFound();
 
@@ -150,7 +155,10 @@ export default async function ReviewPostPage({ params }: Props) {
                     aria-hidden="true"
                   />
                   <div className="relative border border-[#d4aa4d]/65 bg-[#071b16] p-3 shadow-[0_28px_90px_rgba(0,0,0,.35)]">
-                    <div className={`relative ${post.coverAspect ?? "aspect-[2/3]"} overflow-hidden bg-espresso`}>
+                    <div
+                      className="relative overflow-hidden bg-espresso"
+                      style={{ aspectRatio: post.coverAspect ?? 2 / 3 }}
+                    >
                       <Image
                         src={post.coverImage}
                         alt={post.coverAlt ?? `${post.bookTitle} book cover`}
@@ -168,6 +176,7 @@ export default async function ReviewPostPage({ params }: Props) {
         </article>
       </main>
       <Footer />
+      <SanityPreview />
     </>
   );
 }

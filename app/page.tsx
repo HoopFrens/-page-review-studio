@@ -10,6 +10,7 @@ import Hero from "@/components/Hero";
 import Navigation from "@/components/Navigation";
 import Process from "@/components/Process";
 import Reviews from "@/components/Reviews";
+import SanityPreview from "@/components/SanityPreview";
 import SampleEdits from "@/components/SampleEdits";
 import Services from "@/components/Services";
 
@@ -32,6 +33,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <SanityPreview />
     </>
   );
 }
