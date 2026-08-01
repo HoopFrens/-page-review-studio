@@ -22,6 +22,12 @@ yarn-error.log*
 
 # testing
 /coverage
+/.playwright-browsers/
+/.playwright-cli/
+
+# local working files and generated artifacts
+/tmp/
+/output/
 
 # system and editor files
 .DS_Store
@@ -30,3 +36,4 @@ yarn-error.log*
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+.vercel
