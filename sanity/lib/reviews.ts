@@ -27,6 +27,8 @@ type SanityReviewGraphic = {
   _key: string;
   alt?: string;
   quote?: string;
+  sceneTitle?: string;
+  sceneNote?: string;
   image?: SanityImageValue;
 };
 
@@ -110,11 +112,13 @@ export function normalizeSanityReview(document: SanityReviewDocument): ReviewPos
       return [
         {
           _key: graphic._key,
-          src: buildImageUrl(graphic.image, { width: Math.min(width, 1800), quality: 94 }),
+          src: buildImageUrl(graphic.image, { width: Math.min(width, 1200), quality: 92 }),
           alt: graphic.alt,
           width,
           height,
           quote: graphic.quote,
+          sceneTitle: graphic.sceneTitle,
+          sceneNote: graphic.sceneNote,
         },
       ];
     })

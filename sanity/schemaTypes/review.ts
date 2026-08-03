@@ -1,4 +1,4 @@
-import { defineArrayMember, defineField, defineType } from "sanity";
+import { defineArrayMember, defineField, defineType, type ValidationContext } from "sanity";
 import { isValidReviewSlug, toReviewSlug } from "../../lib/reviewSlug";
 
 const requireAltWhenImageExists = (value: unknown, context: { parent?: unknown }) => {
@@ -6,6 +6,45 @@ const requireAltWhenImageExists = (value: unknown, context: { parent?: unknown }
 
   if (parent?.asset?._ref && (typeof value !== "string" || value.trim().length === 0)) {
     return "Add a clear description or full text transcript for this image.";
+  }
+
+  return true;
+};
+
+type ReviewBodyBlock = {
+  _type?: string;
+  style?: string;
+};
+
+const validateReviewBody = (
+  value: unknown,
+  context: ValidationContext,
+) => {
+  if (!Array.isArray(value)) {
+    return true;
+  }
+
+  const blocks = value.filter(
+    (item): item is ReviewBodyBlock =>
+      typeof item === "object" && item !== null && (item as ReviewBodyBlock)._type === "block",
+  );
+  const proseBlocks = blocks.filter((block) => block.style !== "h2");
+  const reviewGraphics = (context.document as { reviewGraphics?: unknown[] } | undefined)
+    ?.reviewGraphics;
+  const sceneCount = Array.isArray(reviewGraphics)
+    ? reviewGraphics.length
+    : 0;
+
+  if (sceneCount > 0 && proseBlocks.length < sceneCount + 1) {
+    return `Add at least ${sceneCount + 1} review passages so every visual scene has prose before and after it.`;
+  }
+
+  if (blocks.at(-1)?.style === "h2") {
+    return "Add review text after the final section heading.";
+  }
+
+  if (blocks.some((block, index) => block.style === "h2" && blocks[index + 1]?.style === "h2")) {
+    return "Add review text between consecutive section headings.";
   }
 
   return true;
@@ -158,7 +197,7 @@ export const reviewType = defineType({
           },
         }),
       ],
-      validation: (Rule) => Rule.required().min(1),
+      validation: (Rule) => Rule.required().min(1).custom(validateReviewBody),
     }),
     defineField({
       name: "coverTheme",
@@ -211,11 +250,11 @@ export const reviewType = defineType({
     }),
     defineField({
       name: "reviewGraphics",
-      title: "Review graphics",
+      title: "Screening Room scenes",
       type: "array",
       group: "artwork",
       description:
-        "Upload up to three graphics and drag them into display order. The first receives the largest position.",
+        "Add up to three visual scenes and drag them into reading order. The website places and alternates them automatically.",
       of: [
         defineArrayMember({
           name: "reviewGraphic",
@@ -224,10 +263,25 @@ export const reviewType = defineType({
           fields: [
             defineField({
               name: "image",
-              title: "Graphic",
+              title: "Scene graphic",
               type: "image",
               options: { hotspot: false },
               validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: "sceneTitle",
+              title: "Scene heading",
+              type: "string",
+              description: "A short editorial heading shown beside the graphic.",
+              validation: (Rule) => Rule.required().max(80),
+            }),
+            defineField({
+              name: "sceneNote",
+              title: "Scene note",
+              type: "text",
+              rows: 2,
+              description: "One sentence connecting this visual to the surrounding review.",
+              validation: (Rule) => Rule.required().max(180),
             }),
             defineField({
               name: "alt",
@@ -242,14 +296,15 @@ export const reviewType = defineType({
               title: "Short featured line",
               type: "text",
               rows: 2,
-              description: "Optional. Used as a concise editorial label when needed.",
+              description: "Retained for older reviews.",
+              hidden: true,
               validation: (Rule) => Rule.max(240),
             }),
           ],
           preview: {
-            select: { title: "quote", subtitle: "alt", media: "image" },
+            select: { title: "sceneTitle", subtitle: "sceneNote", media: "image" },
             prepare: ({ title, subtitle, media }) => ({
-              title: title || "Review graphic",
+              title: title || "Untitled scene",
               subtitle,
               media,
             }),

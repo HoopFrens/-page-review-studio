@@ -30,6 +30,8 @@ const reviewProjection = `
     _key,
     alt,
     quote,
+    sceneTitle,
+    sceneNote,
     image{
       ...,
       asset,

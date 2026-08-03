@@ -26,6 +26,8 @@ export type ReviewPost = {
     width: number;
     height: number;
     quote?: string;
+    sceneTitle?: string;
+    sceneNote?: string;
   }[];
   body: PortableTextBlock[];
   seoTitle?: string;
@@ -78,6 +80,8 @@ export const reviewPosts: ReviewPost[] = [
         width: 917,
         height: 1716,
         quote: "She is a mosaic of competing truths.",
+        sceneTitle: "The Woman Behind the Legend",
+        sceneNote: "On identity: the contradictions that make Evelyn feel fully human.",
       },
       {
         src: "/images/reviews/evelyn-hugo/post-1-emerald-hd.png",
@@ -85,6 +89,8 @@ export const reviewPosts: ReviewPost[] = [
         width: 916,
         height: 1717,
         quote: "The experience of reading this book feels like inhabiting Evelyn's life alongside her.",
+        sceneTitle: "Life From the Inside",
+        sceneNote: "On immersion: a life experienced from the inside, not observed at a distance.",
       },
       {
         src: "/images/reviews/evelyn-hugo/post-5.png",
@@ -92,6 +98,8 @@ export const reviewPosts: ReviewPost[] = [
         width: 916,
         height: 1716,
         quote: "Evelyn's character development spans a beautiful and believable arc.",
+        sceneTitle: "What Remains After Performance",
+        sceneNote: "On transformation: a character arc that remains believable from first choice to final truth.",
       },
     ],
     body: paragraphsToPortableText([

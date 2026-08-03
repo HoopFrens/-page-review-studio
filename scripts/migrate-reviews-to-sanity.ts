@@ -181,6 +181,8 @@ async function buildReviewDocument(post: ReviewPost) {
                 image: { _type: "image", asset },
                 alt: seeds.gallery?.[index]?.alt || graphic.alt,
                 ...(graphic.quote ? { quote: graphic.quote } : {}),
+                ...(graphic.sceneTitle ? { sceneTitle: graphic.sceneTitle } : {}),
+                ...(graphic.sceneNote ? { sceneNote: graphic.sceneNote } : {}),
               },
             ];
           }),
