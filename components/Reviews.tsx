@@ -1,13 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import { formatReviewDate, reviewPosts } from "@/lib/reviews";
+import { getReviewPosts } from "@/lib/reviewRepository";
+import { formatReviewDate } from "@/lib/reviews";
 import Button from "./Button";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
-export default function Reviews() {
+export default async function Reviews() {
+  const reviewPosts = await getReviewPosts();
   const featured = reviewPosts[0];
   const recent = reviewPosts.slice(1, 3);
+
+  if (!featured) return null;
 
   return (
     <section id="reviews" className="section-space bg-linen">
@@ -31,10 +35,13 @@ export default function Reviews() {
                 aria-label={`Read ${featured.bookTitle} review`}
               >
                 {featured.heroImage ? (
-                  <div className={`relative w-full ${featured.heroAspect ?? "aspect-[4/5]"} lg:h-full lg:min-h-[34rem] lg:aspect-auto`}>
+                  <div
+                    className="relative w-full lg:h-full lg:min-h-[34rem]"
+                    style={{ aspectRatio: featured.heroAspect ?? 4 / 5 }}
+                  >
                     <Image
                       src={featured.heroImage}
-                      alt={`Gold rings on green velvet for ${featured.bookTitle}`}
+                      alt={featured.heroAlt ?? `${featured.bookTitle} review artwork`}
                       fill
                       sizes="(max-width: 1024px) 100vw, 55vw"
                       className="object-cover object-[54%_58%] transition-transform duration-700 group-hover:scale-[1.015]"

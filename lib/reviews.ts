@@ -1,4 +1,7 @@
+import type { PortableTextBlock } from "@portabletext/react";
+
 export type ReviewPost = {
+  _id?: string;
   slug: string;
   title: string;
   bookTitle: string;
@@ -12,10 +15,10 @@ export type ReviewPost = {
   readingTime: string;
   coverImage?: string;
   coverAlt?: string;
-  coverAspect?: string;
+  coverAspect?: number;
   heroImage?: string;
   heroAlt?: string;
-  heroAspect?: string;
+  heroAspect?: number;
   gallery?: {
     _key?: string;
     src: string;
@@ -23,9 +26,30 @@ export type ReviewPost = {
     width: number;
     height: number;
     quote?: string;
+    sceneTitle?: string;
+    sceneNote?: string;
   }[];
-  body: string[];
+  body: PortableTextBlock[];
+  seoTitle?: string;
+  seoDescription?: string;
 };
+
+function paragraphsToPortableText(paragraphs: string[]): PortableTextBlock[] {
+  return paragraphs.map((text, index) => ({
+    _type: "block",
+    _key: `paragraph-${index + 1}`,
+    style: "normal",
+    markDefs: [],
+    children: [
+      {
+        _type: "span",
+        _key: `paragraph-${index + 1}-span`,
+        text,
+        marks: [],
+      },
+    ],
+  }));
+}
 
 export const reviewPosts: ReviewPost[] = [
   {
@@ -45,10 +69,10 @@ export const reviewPosts: ReviewPost[] = [
     readingTime: "6 min read",
     coverImage: "/images/reviews/evelyn-hugo/cover.jpg",
     coverAlt: "The Seven Husbands of Evelyn Hugo by Taylor Jenkins Reid book cover",
-    coverAspect: "aspect-[1592/2475]",
+    coverAspect: 1592 / 2475,
     heroImage: "/images/reviews/evelyn-hugo/hero-rings-focused.jpg",
     heroAlt: "Gold wedding rings resting on deep green velvet",
-    heroAspect: "aspect-[3/2]",
+    heroAspect: 3 / 2,
     gallery: [
       {
         src: "/images/reviews/evelyn-hugo/post-2-emerald-hd.png",
@@ -56,6 +80,8 @@ export const reviewPosts: ReviewPost[] = [
         width: 917,
         height: 1716,
         quote: "She is a mosaic of competing truths.",
+        sceneTitle: "The Woman Behind the Legend",
+        sceneNote: "On identity: the contradictions that make Evelyn feel fully human.",
       },
       {
         src: "/images/reviews/evelyn-hugo/post-1-emerald-hd.png",
@@ -63,6 +89,8 @@ export const reviewPosts: ReviewPost[] = [
         width: 916,
         height: 1717,
         quote: "The experience of reading this book feels like inhabiting Evelyn's life alongside her.",
+        sceneTitle: "Life From the Inside",
+        sceneNote: "On immersion: a life experienced from the inside, not observed at a distance.",
       },
       {
         src: "/images/reviews/evelyn-hugo/post-5.png",
@@ -70,9 +98,11 @@ export const reviewPosts: ReviewPost[] = [
         width: 916,
         height: 1716,
         quote: "Evelyn's character development spans a beautiful and believable arc.",
+        sceneTitle: "What Remains After Performance",
+        sceneNote: "On transformation: a character arc that remains believable from first choice to final truth.",
       },
     ],
-    body: [
+    body: paragraphsToPortableText([
       "I closed The Seven Husbands of Evelyn Hugo with an overwhelming sense of reverence and awe, both for Evelyn Hugo as a character and for Taylor Jenkins Reid as a writer. In fact, I am feeling a bit of trepidation even writing this review because Evelyn is so expertly crafted and her story is told with such skill that any attempt to summarize its brilliance feels destined to fall short. Nonetheless, I write.",
       "In picking up this book, I had been hoping for an immersive reading experience: a compelling storyline and a deep character study. Taylor Jenkins Reid gave me that and more. The experience of reading this book feels like inhabiting Evelyn's life alongside her. The story unfolds through her memories, her choices, and her evolving understanding of herself. It is intimate, emotionally resonant, and wholly immersive. At no point did the story drag. There was always movement, always another emotional truth waiting to be uncovered.",
       "Without question, characterization is this novel's greatest strength. Evelyn Hugo looms splendidly regal from the first page. Her presence commands attention, her words consideration. Each chapter of her story unfolds like a new revelation, and she is wonderfully complex: ambitious and compassionate, calculating and humane. Her character development spans a beautiful and believable arc, culminating in a conclusion that feels authentically, undeniably Evelyn.",
@@ -81,7 +111,7 @@ export const reviewPosts: ReviewPost[] = [
       "Several themes emerge throughout the novel, but the most compelling theme explores the complexity of relationships: how we define relationships, what sustains or destroys them, and what happens when relational boundaries begin to blur. Love, loyalty, sacrifice, resentment, and forgiveness are all examined with gritty nuance and refreshing honesty. Ambition is another prominent theme in the book. Success demands sacrifice. Evelyn's story invites us to consider what we are willing to sacrifice for success and whether we truly understand what we might be forfeiting in the process. Against the backdrop of old Hollywood - a culture obsessed with reinvention, appearances, and ambition - these questions feel critically important.",
       "Perhaps the most powerful insight this novel offered me was the recognition that I am not fundamentally different from any of these characters, not even the ones whose choices I questioned. In some small way, I could see myself reflected in the people on the page. Their fears. Their desires. Their mistakes. The book is, ultimately, a candid exploration of the human condition, and I was captivated by its willingness to place so many complicated, uncomfortable facets of humanity on the examination table.",
       "Few books earn a lasting place in my thoughts. The Seven Husbands of Evelyn Hugo did. It is not simply a novel about old Hollywood. It is a story about identity, ambition, relationships, and the messy contradictions that make us human. And long after the final page, what lingers is not the carefully crafted legend of Evelyn Hugo, but the hard-won truths she leaves behind about love, loss, and what matters when all the performances fall away.",
-    ],
+    ]),
   },
   {
     slug: "lessons-in-chemistry-review",
@@ -98,12 +128,12 @@ export const reviewPosts: ReviewPost[] = [
       "The novel works because its wit never replaces tenderness. It sharpens it.",
     coverTone: "bg-terracotta",
     readingTime: "6 min read",
-    body: [
+    body: paragraphsToPortableText([
       "A memorable book review should do more than say whether a book is good. It should help a reader understand what kind of experience the book offers, what the author is attempting, and why the work lingers after the final page.",
       "Lessons in Chemistry gives reviewers plenty to discuss: a protagonist with an unmistakable voice, a period setting full of social pressure, and a structure that balances humor with grief. What makes the novel compelling is not simply that Elizabeth Zott is brilliant. It is that the book allows her intelligence to have edges.",
       "The strongest moments arrive when the prose trusts contradiction. Elizabeth can be precise and emotionally guarded, but she is not cold. The book lets her be funny without making her a novelty, principled without turning her into a slogan, and wounded without flattening her into victimhood.",
       "For readers who care about craft, the lesson is clear: voice becomes powerful when it is attached to pressure. Every sharp sentence in the novel has something underneath it. A good review should pay attention to that pressure, because that is where the real reading experience lives.",
-    ],
+    ]),
   },
   {
     slug: "the-light-we-carry-review",
@@ -120,12 +150,12 @@ export const reviewPosts: ReviewPost[] = [
       "Its most persuasive moments are the ones that trade certainty for steadiness.",
     coverTone: "bg-bronze",
     readingTime: "5 min read",
-    body: [
+    body: paragraphsToPortableText([
       "The Light We Carry is built around a generous question: what helps a person remain whole while moving through uncertainty? The book does not pretend that confidence is a permanent state. Instead, it treats steadiness as a practice.",
       "That distinction matters. The strongest nonfiction often succeeds because it gives readers language for something they already feel but have not yet organized. Michelle Obama writes about fear, friendship, identity, and visibility with a tone that feels both composed and intimate.",
       "As a reading experience, the book is most effective when it stays close to specific scenes and habits. The personal details give weight to the larger advice. They keep the book from becoming abstract encouragement and remind the reader that resilience is usually built in ordinary, repeated choices.",
       "A full review of this kind of book should make room for both message and method. The message is useful, but the method is what creates trust: clear stories, measured reflection, and an authorial voice that understands encouragement as companionship rather than performance.",
-    ],
+    ]),
   },
   {
     slug: "tomorrow-and-tomorrow-and-tomorrow-review",
@@ -142,18 +172,14 @@ export const reviewPosts: ReviewPost[] = [
       "The book understands that collaboration can be a love language and a battlefield.",
     coverTone: "bg-espresso",
     readingTime: "7 min read",
-    body: [
+    body: paragraphsToPortableText([
       "Tomorrow, and Tomorrow, and Tomorrow is often described as a novel about video games, but its deeper subject is creative intimacy. The games matter because they give the characters a shared language for ambition, grief, repair, and escape.",
       "The novel's emotional power comes from the way it treats friendship as a living structure. It can hold admiration, resentment, loyalty, misunderstanding, and tenderness at once. That complexity gives the story its momentum.",
       "From a craft perspective, the book is especially interesting because it lets form echo theme. The narrative moves across years, projects, partnerships, and losses, but the throughline remains the question of what people make together and what that making asks of them.",
       "A long review has space to honor that complexity. Rather than reducing the book to plot or recommendation, it can trace the emotional architecture beneath the story: how creative people find each other, wound each other, need each other, and sometimes learn how to keep going anyway.",
-    ],
+    ]),
   },
 ];
-
-export function getReviewPost(slug: string) {
-  return reviewPosts.find((post) => post.slug === slug);
-}
 
 export function formatReviewDate(date: string) {
   return new Intl.DateTimeFormat("en", { month: "long", day: "numeric", year: "numeric" }).format(new Date(`${date}T12:00:00`));

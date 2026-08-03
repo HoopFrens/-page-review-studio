@@ -3,7 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
-import { formatReviewDate, reviewPosts } from "@/lib/reviews";
+import SanityPreview from "@/components/SanityPreview";
+import { getReviewPosts } from "@/lib/reviewRepository";
+import { formatReviewDate } from "@/lib/reviews";
 
 export const metadata: Metadata = {
   title: "Book Reviews | Page Review Studio",
@@ -11,7 +13,9 @@ export const metadata: Metadata = {
     "Read full-length book reviews from Krystal Williams, including craft notes, reading reflections, and complete reviews beyond social posts.",
 };
 
-export default function ReviewsPage() {
+export default async function ReviewsPage() {
+  const reviewPosts = await getReviewPosts();
+
   return (
     <>
       <Navigation />
@@ -31,10 +35,13 @@ export default function ReviewsPage() {
               <article key={post.slug} className="flex h-full flex-col border-t hairline pt-7">
                 <div className={`${post.coverTone} relative mb-7 flex overflow-hidden p-3 text-ivory`}>
                   {post.heroImage ? (
-                    <div className={`relative w-full ${post.heroAspect ?? "aspect-[4/5]"}`}>
+                    <div
+                      className="relative w-full"
+                      style={{ aspectRatio: post.heroAspect ?? 4 / 5 }}
+                    >
                       <Image
                         src={post.heroImage}
-                        alt={`${post.bookTitle} review artwork`}
+                        alt={post.heroAlt ?? `${post.bookTitle} review artwork`}
                         fill
                         sizes="(max-width: 1024px) 100vw, 33vw"
                         className="object-contain"
@@ -72,6 +79,7 @@ export default function ReviewsPage() {
         </section>
       </main>
       <Footer />
+      <SanityPreview />
     </>
   );
 }

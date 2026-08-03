@@ -6,18 +6,37 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "sanity:validate": "sanity schema validate",
+    "sanity:migrate:dry": "sanity exec scripts/migrate-reviews-to-sanity.ts --with-user-token -- --dry-run",
+    "sanity:migrate": "sanity exec scripts/migrate-reviews-to-sanity.ts --with-user-token"
   },
   "dependencies": {
+    "@portabletext/react": "^7.0.1",
+    "@sanity/client": "^7.25.0",
+    "@sanity/image-url": "^2.0.3",
+    "@sanity/vision": "^6.8.0",
     "@types/node": "^22.10.5",
     "@types/react": "^19.0.3",
     "@types/react-dom": "^19.0.2",
     "autoprefixer": "^10.4.20",
-    "next": "^15.1.3",
-    "postcss": "^8.4.49",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "next": "^16.2.12",
+    "next-sanity": "^13.2.3",
+    "postcss": "^8.5.25",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "sanity": "^6.8.0",
+    "styled-components": "^6.1.19",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2"
+  },
+  "overrides": {
+    "adm-zip": "0.6.0",
+    "js-yaml": "3.15.1",
+    "postcss": "$postcss",
+    "sharp": "0.35.3",
+    "smol-toml": "1.7.1",
+    "uuid": "11.1.1"
   }
 }
