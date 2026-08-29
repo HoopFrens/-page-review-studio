@@ -17,7 +17,7 @@ export default function Hero() {
           <div className="absolute -left-5 -top-5 hidden h-full w-full border border-bronze/60 sm:block" />
           <div className="relative aspect-[4/5] overflow-hidden bg-espresso">
             <Image
-              src="/images/krystal-williams.jpeg"
+              src="/images/krystal-williams-headshot.jpeg"
               alt="Krystal Williams, founder of Page Review Studio"
               fill
               priority
