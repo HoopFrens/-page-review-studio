@@ -189,7 +189,7 @@ export const reviewType = defineType({
     }),
     defineField({
       name: "pullQuote",
-      title: "Krystal's pull quote",
+      title: "My pull quote",
       type: "text",
       rows: 3,
       group: "review",

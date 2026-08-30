@@ -64,7 +64,7 @@ function SocialCaption({ children }: { children: string }) {
   return (
     <aside className="review-notebook-note" aria-labelledby="review-social-caption-heading">
       <h2 id="review-social-caption-heading" className="eyebrow text-[#7a3f2f]">
-        From Krystal&apos;s notebook
+        From my notebook
       </h2>
       <p className="mt-4 font-serif text-3xl leading-10 text-espresso">{children}</p>
     </aside>

@@ -62,7 +62,7 @@ export default function Contact() {
         {sent ? (
           <div role="status" className="self-start border border-bronze bg-linen p-10">
             <p className="font-serif text-4xl text-espresso">Thank you.</p>
-            <p className="mt-4 leading-8 text-espresso/70">Your inquiry has been received. Krystal will respond within two business days.</p>
+            <p className="mt-4 leading-8 text-espresso/70">Your inquiry has been received. I will respond within two business days.</p>
           </div>
         ) : (
           <form onSubmit={submit} className="grid gap-x-8 gap-y-7 sm:grid-cols-2" aria-label="Project inquiry form">
