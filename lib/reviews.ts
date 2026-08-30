@@ -62,7 +62,7 @@ export const reviewPosts: ReviewPost[] = [
     category: "Fiction",
     tags: ["Old Hollywood", "Character Study", "Identity", "Ambition", "Love & Sacrifice", "Complex Women"],
     excerpt:
-      "Krystal's first full review considers why Evelyn Hugo feels so vivid: a woman shaped by ambition, love, sacrifice, self-awareness, and the hard-won truth of her own life.",
+      "In my first full review, I consider why Evelyn Hugo feels so vivid: a woman shaped by ambition, love, sacrifice, self-awareness, and the hard-won truth of her own life.",
     socialExcerpt:
       "The Seven Husbands of Evelyn Hugo is intimate, emotionally resonant, and wholly immersive - a story about identity, ambition, relationships, and the messy contradictions that make us human.",
     pullQuote:
@@ -126,7 +126,7 @@ export const reviewPosts: ReviewPost[] = [
     excerpt:
       "A full-length review on the craft choices that make Elizabeth Zott feel exacting, wounded, funny, and impossible to ignore.",
     socialExcerpt:
-      "Krystal's longer review of Lessons in Chemistry looks at voice, structure, and why this story keeps its emotional charge beyond the premise.",
+      "In my longer review of Lessons in Chemistry, I look at voice, structure, and why this story keeps its emotional charge beyond the premise.",
     pullQuote:
       "The novel works because its wit never replaces tenderness. It sharpens it.",
     coverTone: "bg-terracotta",
@@ -172,7 +172,7 @@ export const reviewPosts: ReviewPost[] = [
     excerpt:
       "A deeper look at how the novel turns collaboration, games, grief, and creative partnership into a layered emotional landscape.",
     socialExcerpt:
-      "Krystal's full review explores how Tomorrow, and Tomorrow, and Tomorrow captures friendship as both refuge and friction.",
+      "In my full review, I explore how Tomorrow, and Tomorrow, and Tomorrow captures friendship as both refuge and friction.",
     pullQuote:
       "The book understands that collaboration can be a love language and a battlefield.",
     coverTone: "bg-espresso",

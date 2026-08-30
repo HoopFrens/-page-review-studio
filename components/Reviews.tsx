@@ -21,7 +21,7 @@ export default async function Reviews() {
             <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
               <SectionHeading
                 eyebrow="Full reviews"
-                title="A home base for every book Krystal reviews."
+                title="A home base for every book I review."
                 intro="Social posts can start the conversation. The website now gives each review room to breathe with the full reflection, craft notes, and reading experience in one lasting place."
               />
               <Button href="/reviews" variant="outline" className="justify-self-start lg:mb-1">

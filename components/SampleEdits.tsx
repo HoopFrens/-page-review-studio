@@ -48,7 +48,7 @@ export default function SampleEdits() {
             {sent ? (
               <div role="status" className="border border-bronze p-8">
                 <p className="font-serif text-3xl">Thank you.</p>
-                <p className="mt-3 text-stone">Your request has been received. Krystal will respond within two business days.</p>
+                <p className="mt-3 text-stone">Your request has been received. I will respond within two business days.</p>
               </div>
             ) : (
               <>

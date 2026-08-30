@@ -10,7 +10,7 @@ import { formatReviewDate } from "@/lib/reviews";
 export const metadata: Metadata = {
   title: "Book Reviews | Page Review Studio",
   description:
-    "Read full-length book reviews from Krystal Williams, including craft notes, reading reflections, and complete reviews beyond social posts.",
+    "Read my full-length book reviews, including craft notes, reading reflections, and complete reviews beyond social posts.",
 };
 
 export default async function ReviewsPage() {
@@ -25,7 +25,7 @@ export default async function ReviewsPage() {
             <p className="eyebrow text-bronze">Book reviews</p>
             <h1 className="display mt-6 max-w-4xl text-6xl sm:text-7xl lg:text-8xl">The full review lives here.</h1>
             <p className="mt-8 max-w-2xl text-base leading-8 text-stone">
-              Krystal shares shorter reflections across social platforms. This archive is the lasting home for each complete review.
+              I share shorter reflections across social platforms. This archive is the lasting home for each complete review.
             </p>
           </div>
         </section>

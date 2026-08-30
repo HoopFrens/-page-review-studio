@@ -141,11 +141,11 @@ export async function POST(request: Request) {
     const sampleEditUrl = clean(process.env.SAMPLE_EDIT_URL);
     const sampleEditLine = sampleEditUrl
       ? `\n\nYou can review the sample edit here: ${sampleEditUrl}`
-      : "\n\nKrystal will respond within two business days with next steps.";
+      : "\n\nI will respond within two business days with next steps.";
     const confirmationText =
       kind === "sample-edit"
-        ? `Hi ${name},\n\nThank you for requesting a sample edit from Page Review Studio. Krystal received your request.${sampleEditLine}\n\nPage Review Studio`
-        : `Hi ${name},\n\nThank you for reaching out to Page Review Studio. Krystal received your inquiry and will respond within two business days.\n\nPage Review Studio`;
+        ? `Hi ${name},\n\nThank you for requesting a sample edit from Page Review Studio. I received your request.${sampleEditLine}\n\nPage Review Studio`
+        : `Hi ${name},\n\nThank you for reaching out to Page Review Studio. I received your inquiry and will respond within two business days.\n\nPage Review Studio`;
 
     await sendEmail({
       to: email,
