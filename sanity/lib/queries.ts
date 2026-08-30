@@ -8,6 +8,7 @@ const reviewProjection = `
   author,
   publishedOn,
   category,
+  tags,
   excerpt,
   socialExcerpt,
   pullQuote,

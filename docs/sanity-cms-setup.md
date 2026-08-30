@@ -8,7 +8,7 @@ Krystal's normal workflow is:
 
 1. Open `https://www.pagereviewstudio.com/studio` and sign in with her own invited Sanity account.
 2. Choose **Book Reviews**, then **New Book Review**.
-3. Enter the review, book details, excerpts, and artwork.
+3. Enter the review, book details, excerpts, and artwork. Under **Review tags**, type a short theme and press Enter after each one. Add 3–6 tags and drag them into the order readers should see.
 4. Add up to three **Screening Room scenes**. For each scene, upload the graphic, provide its complete text transcript, and write a short scene heading and one-sentence scene note.
 5. Drag the scenes into reading order. The website distributes and alternates them automatically.
 6. Open **Presentation** to preview the unpublished review at desktop or phone width.
@@ -66,7 +66,7 @@ npm run sanity:migrate
 
 The migration is a guarded, one-time import. It uses stable review document IDs, reuses uploaded assets by filename, and imports only the five active Evelyn Hugo images. Its dry run checks the seed data, local asset files, authenticated dataset access, and target-ID collisions. Once a target review or draft exists, the normal migration command refuses to overwrite it so later Studio edits remain safe. The unused rollback graphics stay in Git and are not added to the CMS.
 
-Compare every migrated review in Presentation. Check titles, dates, text, metadata, image transcripts, scene headings and notes, scene order, and both desktop and phone layouts.
+Compare every migrated review in Presentation. Check titles, dates, text, metadata, tags, image transcripts, scene headings and notes, scene order, and both desktop and phone layouts.
 
 ## Cut over and roll back
 

@@ -40,6 +40,7 @@ export type SanityReviewDocument = {
   author?: string;
   publishedOn?: string;
   category?: string;
+  tags?: string[];
   excerpt?: string;
   socialExcerpt?: string;
   pullQuote?: string;
@@ -100,6 +101,16 @@ export function normalizeSanityReview(document: SanityReviewDocument): ReviewPos
     cleanTheme === "terracotta" || cleanTheme === "bronze" ? cleanTheme : "espresso";
   const cover = hasImage(document.coverImage) ? document.coverImage : undefined;
   const hero = hasImage(document.heroImage) ? document.heroImage : undefined;
+  const tags = Array.from(
+    new Map(
+      (document.tags || []).flatMap((tag) => {
+        if (typeof tag !== "string") return [];
+
+        const cleanTag = stegaClean(tag).trim();
+        return cleanTag ? [[cleanTag.toLocaleLowerCase(), cleanTag] as const] : [];
+      }),
+    ).values(),
+  ).slice(0, 8);
 
   const gallery = (document.reviewGraphics || [])
     .flatMap((graphic) => {
@@ -132,6 +143,7 @@ export function normalizeSanityReview(document: SanityReviewDocument): ReviewPos
     author,
     date: publishedOn,
     category: document.category || "Other",
+    tags,
     excerpt: document.excerpt || "",
     socialExcerpt: document.socialExcerpt || "",
     pullQuote: document.pullQuote || "",

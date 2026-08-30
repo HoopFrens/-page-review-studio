@@ -8,6 +8,7 @@ export type ReviewPost = {
   author: string;
   date: string;
   category: string;
+  tags: string[];
   excerpt: string;
   socialExcerpt: string;
   pullQuote: string;
@@ -59,6 +60,7 @@ export const reviewPosts: ReviewPost[] = [
     author: "Taylor Jenkins Reid",
     date: "2026-06-21",
     category: "Fiction",
+    tags: ["Old Hollywood", "Character Study", "Identity", "Ambition", "Love & Sacrifice", "Complex Women"],
     excerpt:
       "Krystal's first full review considers why Evelyn Hugo feels so vivid: a woman shaped by ambition, love, sacrifice, self-awareness, and the hard-won truth of her own life.",
     socialExcerpt:
@@ -120,6 +122,7 @@ export const reviewPosts: ReviewPost[] = [
     author: "Bonnie Garmus",
     date: "2026-06-12",
     category: "Fiction",
+    tags: ["1960s America", "Feminism", "Science", "Voice", "Agency", "Reinvention"],
     excerpt:
       "A full-length review on the craft choices that make Elizabeth Zott feel exacting, wounded, funny, and impossible to ignore.",
     socialExcerpt:
@@ -142,6 +145,7 @@ export const reviewPosts: ReviewPost[] = [
     author: "Michelle Obama",
     date: "2026-06-05",
     category: "Nonfiction",
+    tags: ["Personal Growth", "Resilience", "Self-Trust", "Relationships", "Reflection"],
     excerpt:
       "A longer review of the book's invitation to build durable practices for uncertainty, ambition, relationships, and visibility.",
     socialExcerpt:
@@ -164,6 +168,7 @@ export const reviewPosts: ReviewPost[] = [
     author: "Gabrielle Zevin",
     date: "2026-05-28",
     category: "Fiction",
+    tags: ["Literary Fiction", "Friendship", "Creativity", "Ambition", "Grief"],
     excerpt:
       "A deeper look at how the novel turns collaboration, games, grief, and creative partnership into a layered emotional landscape.",
     socialExcerpt:

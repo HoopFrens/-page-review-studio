@@ -50,6 +50,26 @@ const validateReviewBody = (
   return true;
 };
 
+const validateReviewTags = (value: unknown) => {
+  if (!Array.isArray(value)) {
+    return true;
+  }
+
+  const tags = value.filter((tag): tag is string => typeof tag === "string");
+
+  if (tags.length !== value.length || tags.some((tag) => tag.trim().length === 0)) {
+    return "Remove any empty tags.";
+  }
+
+  const normalizedTags = tags.map((tag) => tag.trim().toLocaleLowerCase());
+
+  if (new Set(normalizedTags).size !== normalizedTags.length) {
+    return "Remove duplicate tags, including tags that differ only by capitalization.";
+  }
+
+  return true;
+};
+
 export const reviewType = defineType({
   name: "review",
   title: "Book Review",
@@ -134,6 +154,22 @@ export const reviewType = defineType({
         layout: "dropdown",
       },
       validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "tags",
+      title: "Review tags",
+      type: "array",
+      group: "review",
+      description:
+        "Add 3–6 short themes or reading qualities. Press Enter after each tag, then drag to reorder.",
+      of: [
+        defineArrayMember({
+          type: "string",
+          validation: (Rule) => Rule.required().min(2).max(32),
+        }),
+      ],
+      options: { layout: "tags" },
+      validation: (Rule) => Rule.max(8).unique().custom(validateReviewTags),
     }),
     defineField({
       name: "readingTimeMinutes",
