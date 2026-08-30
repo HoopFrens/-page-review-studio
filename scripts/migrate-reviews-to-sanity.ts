@@ -144,6 +144,7 @@ async function buildReviewDocument(post: ReviewPost) {
     slug: { _type: "slug", current: post.slug },
     publishedOn: post.date,
     category: post.category,
+    tags: post.tags,
     readingTimeMinutes: readingTimeMinutes(post),
     excerpt: post.excerpt,
     pullQuote: post.pullQuote,

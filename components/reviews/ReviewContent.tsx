@@ -71,6 +71,28 @@ function SocialCaption({ children }: { children: string }) {
   );
 }
 
+function ReviewTags({ tags }: { tags: string[] }) {
+  if (!tags.length) return null;
+
+  return (
+    <section className="review-tag-index" aria-labelledby="review-tags-heading">
+      <div className="review-tag-index-inner">
+        <div className="review-tag-index-heading">
+          <p className="eyebrow">Review index</p>
+          <h2 id="review-tags-heading">Themes &amp; threads</h2>
+        </div>
+        <ul className="review-tag-list">
+          {tags.map((tag) => (
+            <li key={tag} className="review-tag">
+              {tag}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
 function FloatingBookCover({ post }: { post: ReviewPost }) {
   return (
     <aside className="review-floating-cover" aria-labelledby="review-book-details-heading">
@@ -217,6 +239,7 @@ export default function ReviewContent({ post }: ReviewContentProps) {
           </Fragment>
         );
       })}
+      <ReviewTags tags={post.tags} />
     </div>
   );
 }
