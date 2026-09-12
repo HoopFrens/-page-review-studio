@@ -56,8 +56,8 @@ const imageSeeds: Record<
 };
 
 function coverTheme(post: ReviewPost) {
-  if (post.coverTone === "bg-terracotta") return "terracotta";
-  if (post.coverTone === "bg-bronze") return "bronze";
+  if (post.coverTone === "bg-brand-blue") return "terracotta";
+  if (post.coverTone === "bg-brand-gold") return "bronze";
   return "espresso";
 }
 

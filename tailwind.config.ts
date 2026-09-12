@@ -5,13 +5,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        ivory: "#F6F2EC",
-        espresso: "#231814",
-        terracotta: "#B96D52",
-        ink: "#1F1B18",
-        bronze: "#B08A57",
-        linen: "#EFE7DC",
-        stone: "#D8CDC0",
+        "brand-blue": "#105E8D",
+        "brand-gold": "#C8872A",
+        "brand-brown": "#37190F",
+        "brand-tan": "#DDB795",
+        "brand-cream": "#FCE9DF",
+        "brand-linen": "#F4DDCD",
       },
       fontFamily: {
         serif: ["var(--font-cormorant)", "Georgia", "serif"],

@@ -14,9 +14,9 @@ function BodyParagraph({ children, lead = false }: { children: ReactNode; lead?:
     <p
       className={`${
         lead
-          ? "first-letter:float-left first-letter:mr-3 first-letter:font-serif first-letter:text-7xl first-letter:leading-[.8] first-letter:text-terracotta"
+          ? "first-letter:float-left first-letter:mr-3 first-letter:font-serif first-letter:text-7xl first-letter:leading-[.8] first-letter:text-brand-blue"
           : ""
-      } mb-7 text-lg leading-[1.9] text-espresso/75`}
+      } mb-7 text-lg leading-[1.9] text-brand-brown/75`}
     >
       {children}
     </p>
@@ -30,10 +30,10 @@ function ReviewBody({ blocks, leadFirst = false }: { blocks: PortableTextBlock[]
         <BodyParagraph lead={leadFirst && index === 0}>{children}</BodyParagraph>
       ),
       h2: ({ children }) => (
-        <h2 className="mb-6 mt-12 font-serif text-4xl leading-tight text-espresso">{children}</h2>
+        <h2 className="mb-6 mt-12 font-serif text-4xl leading-tight text-brand-brown">{children}</h2>
       ),
       blockquote: ({ children }) => (
-        <blockquote className="my-10 border-l-2 border-terracotta pl-6 font-serif text-3xl leading-10 text-espresso">
+        <blockquote className="my-10 border-l-2 border-brand-blue pl-6 font-serif text-3xl leading-10 text-brand-brown">
           {children}
         </blockquote>
       ),
@@ -46,7 +46,7 @@ function ReviewBody({ blocks, leadFirst = false }: { blocks: PortableTextBlock[]
         return (
           <a
             href={href}
-            className="text-terracotta underline decoration-terracotta/35 underline-offset-4 transition-colors hover:text-espresso focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta"
+            className="text-brand-blue underline decoration-brand-blue/35 underline-offset-4 transition-colors hover:text-brand-brown focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-blue"
             target={external ? "_blank" : undefined}
             rel={external ? "noreferrer" : undefined}
           >
@@ -63,10 +63,10 @@ function ReviewBody({ blocks, leadFirst = false }: { blocks: PortableTextBlock[]
 function SocialCaption({ children }: { children: string }) {
   return (
     <aside className="review-notebook-note" aria-labelledby="review-social-caption-heading">
-      <h2 id="review-social-caption-heading" className="eyebrow text-[#7a3f2f]">
+      <h2 id="review-social-caption-heading" className="eyebrow text-brand-blue">
         From my notebook
       </h2>
-      <p className="mt-4 font-serif text-3xl leading-10 text-espresso">{children}</p>
+      <p className="mt-4 font-serif text-3xl leading-10 text-brand-brown">{children}</p>
     </aside>
   );
 }
@@ -99,7 +99,7 @@ function FloatingBookCover({ post }: { post: ReviewPost }) {
       {post.coverImage ? (
         <div className="review-floating-cover-frame">
           <div
-            className="relative overflow-hidden bg-espresso"
+            className="relative overflow-hidden bg-brand-brown"
             style={{ aspectRatio: post.coverAspect ?? 2 / 3 }}
           >
             <Image
@@ -112,21 +112,26 @@ function FloatingBookCover({ post }: { post: ReviewPost }) {
           </div>
         </div>
       ) : (
-        <div className={`review-floating-cover-fallback ${post.coverTone}`} aria-hidden="true">
-          <p className="eyebrow text-ivory/70">{post.category}</p>
+        <div
+          className={`review-floating-cover-fallback ${post.coverTone} ${
+            post.coverTone === "bg-brand-gold" ? "text-brand-brown" : "text-brand-cream"
+          }`}
+          aria-hidden="true"
+        >
+          <p className="eyebrow opacity-70">{post.category}</p>
           <div>
-            <p className="font-serif text-4xl leading-none text-ivory">{post.bookTitle}</p>
-            <p className="mt-4 text-xs text-ivory/70">by {post.author}</p>
+            <p className="font-serif text-4xl leading-none">{post.bookTitle}</p>
+            <p className="mt-4 text-xs opacity-70">by {post.author}</p>
           </div>
-          <p className="font-serif text-xl leading-7 text-ivory/90">“{post.pullQuote}”</p>
+          <p className="font-serif text-xl leading-7 opacity-90">“{post.pullQuote}”</p>
         </div>
       )}
       <div className="mt-6">
-        <h2 id="review-book-details-heading" className="eyebrow text-[#765a35]">
+        <h2 id="review-book-details-heading" className="eyebrow text-brand-blue">
           Book details
         </h2>
-        <p className="mt-2 font-serif text-2xl leading-7 text-espresso">{post.bookTitle}</p>
-        <p className="mt-2 text-xs text-espresso/70">by {post.author}</p>
+        <p className="mt-2 font-serif text-2xl leading-7 text-brand-brown">{post.bookTitle}</p>
+        <p className="mt-2 text-xs text-brand-brown/70">by {post.author}</p>
       </div>
     </aside>
   );

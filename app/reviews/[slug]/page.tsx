@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.seoDescription || post.socialExcerpt,
       type: "article",
       publishedTime: post.date,
-      images: post.heroImage ? [post.heroImage] : undefined,
+      images: post.heroImage ? [post.heroImage] : ["/opengraph-image.png"],
     },
   };
 }

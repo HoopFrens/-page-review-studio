@@ -88,7 +88,7 @@ async function sendEmail({
       to: [to],
       subject,
       text,
-      html: `<div style="font-family:Arial,sans-serif;font-size:16px;line-height:1.6;color:#231814">${htmlBlock(text)}</div>`,
+      html: `<div style="font-family:Arial,sans-serif;font-size:16px;line-height:1.6;color:#37190F">${htmlBlock(text)}</div>`,
       ...(replyTo ? { reply_to: replyTo } : {}),
     }),
   });
