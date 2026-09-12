@@ -37,6 +37,20 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Page Review Studio",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Page Review Studio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Page Review Studio | Boutique Editorial Studio",
+    description: "An editorial partner for people with something worth saying.",
+    images: ["/opengraph-image.png"],
   },
 };
 

@@ -67,7 +67,7 @@ export const reviewPosts: ReviewPost[] = [
       "The Seven Husbands of Evelyn Hugo is intimate, emotionally resonant, and wholly immersive - a story about identity, ambition, relationships, and the messy contradictions that make us human.",
     pullQuote:
       "The experience of reading this book feels like inhabiting Evelyn's life alongside her.",
-    coverTone: "bg-espresso",
+    coverTone: "bg-brand-brown",
     readingTime: "6 min read",
     coverImage: "/images/reviews/evelyn-hugo/cover.jpg",
     coverAlt: "The Seven Husbands of Evelyn Hugo by Taylor Jenkins Reid book cover",
@@ -129,7 +129,7 @@ export const reviewPosts: ReviewPost[] = [
       "In my longer review of Lessons in Chemistry, I look at voice, structure, and why this story keeps its emotional charge beyond the premise.",
     pullQuote:
       "The novel works because its wit never replaces tenderness. It sharpens it.",
-    coverTone: "bg-terracotta",
+    coverTone: "bg-brand-blue",
     readingTime: "6 min read",
     body: paragraphsToPortableText([
       "A memorable book review should do more than say whether a book is good. It should help a reader understand what kind of experience the book offers, what the author is attempting, and why the work lingers after the final page.",
@@ -152,7 +152,7 @@ export const reviewPosts: ReviewPost[] = [
       "This full review considers how The Light We Carry turns personal reflection into practical encouragement without losing warmth.",
     pullQuote:
       "Its most persuasive moments are the ones that trade certainty for steadiness.",
-    coverTone: "bg-bronze",
+    coverTone: "bg-brand-gold",
     readingTime: "5 min read",
     body: paragraphsToPortableText([
       "The Light We Carry is built around a generous question: what helps a person remain whole while moving through uncertainty? The book does not pretend that confidence is a permanent state. Instead, it treats steadiness as a practice.",
@@ -175,7 +175,7 @@ export const reviewPosts: ReviewPost[] = [
       "In my full review, I explore how Tomorrow, and Tomorrow, and Tomorrow captures friendship as both refuge and friction.",
     pullQuote:
       "The book understands that collaboration can be a love language and a battlefield.",
-    coverTone: "bg-espresso",
+    coverTone: "bg-brand-brown",
     readingTime: "7 min read",
     body: paragraphsToPortableText([
       "Tomorrow, and Tomorrow, and Tomorrow is often described as a novel about video games, but its deeper subject is creative intimacy. The games matter because they give the characters a shared language for ambition, grief, repair, and escape.",

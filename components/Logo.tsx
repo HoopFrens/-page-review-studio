@@ -1,19 +1,46 @@
-type LogoProps = { iconOnly?: boolean; light?: boolean; className?: string };
+import Image from "next/image";
+import horizontalLogo from "@/public/brand/page-review-studio-logo.png";
+import stackedLogo from "@/public/brand/page-review-studio-logo-stacked.png";
+import brandMark from "@/public/brand/page-review-studio-mark.png";
 
-export default function PageReviewLogo({ iconOnly = false, light = false, className = "" }: LogoProps) {
-  const ink = light ? "#F6F2EC" : "#231814";
+type LogoVariant = "horizontal" | "stacked" | "mark";
+
+type LogoProps = {
+  variant?: LogoVariant;
+  framed?: boolean;
+  decorative?: boolean;
+  preload?: boolean;
+  className?: string;
+};
+
+const logoSources = {
+  horizontal: horizontalLogo,
+  stacked: stackedLogo,
+  mark: brandMark,
+} satisfies Record<LogoVariant, typeof horizontalLogo>;
+
+export default function PageReviewLogo({
+  variant = "horizontal",
+  framed = false,
+  decorative = false,
+  preload = false,
+  className = "",
+}: LogoProps) {
   return (
-    <div className={`flex items-center gap-3 ${className}`} aria-label="Page Review Studio">
-      <svg viewBox="0 0 44 50" className="h-10 w-9 shrink-0" aria-hidden="true">
-        <path d="M35 3C20 7 10 19 10 37c8-5 16-13 23-25-4 12-10 22-19 30" fill="none" stroke={ink} strokeWidth="1.6" strokeLinecap="round" />
-        <path d="M12 38c8-2 15-1 22 4M9 42c8-2 15-1 22 4" fill="none" stroke="#B08A57" strokeWidth="1.3" strokeLinecap="round" />
-      </svg>
-      {!iconOnly && (
-        <div className="leading-none">
-          <div className="font-serif text-[1.15rem] font-medium tracking-[.03em]" style={{ color: ink }}>Page Review</div>
-          <div className="mt-1 text-[.55rem] font-semibold uppercase tracking-[.32em] text-bronze">Studio</div>
-        </div>
-      )}
-    </div>
+    <span
+      className={`inline-flex shrink-0 items-center justify-center ${
+        framed
+          ? "border border-brand-gold/45 bg-brand-cream p-4 shadow-[0_18px_50px_rgba(22,9,5,.18)]"
+          : ""
+      } ${className}`}
+    >
+      <Image
+        src={logoSources[variant]}
+        alt={decorative ? "" : "Page Review Studio"}
+        className="h-auto w-full object-contain"
+        sizes={variant === "mark" ? "56px" : "(max-width: 640px) 176px, 224px"}
+        preload={preload}
+      />
+    </span>
   );
 }

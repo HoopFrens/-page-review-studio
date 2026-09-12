@@ -57,9 +57,9 @@ export type SanityReviewDocument = {
 const imageBuilder = createImageUrlBuilder(sanityClient);
 
 const coverToneClasses = {
-  espresso: "bg-espresso",
-  terracotta: "bg-terracotta",
-  bronze: "bg-bronze",
+  espresso: "bg-brand-brown",
+  terracotta: "bg-brand-blue",
+  bronze: "bg-brand-gold",
 } as const;
 
 function hasImage(image?: SanityImageValue): image is SanityImageValue & {
