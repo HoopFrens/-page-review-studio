@@ -2,10 +2,10 @@ import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
 const steps = [
-  ["Discover", "We begin with a conversation about your goals, audience, manuscript, timeline, and what success looks like for the work."],
-  ["Assess", "Your draft, outline, or idea is reviewed with care. You receive honest guidance about what is working, what needs attention, and where the strongest opportunities are."],
-  ["Develop", "Together, we shape the work through restructuring, editing, writing, revising, or developing the manuscript from the ground up."],
-  ["Deliver", "You receive polished, purposeful work ready for publishing, submission, presentation, or continued development."],
+  ["Discover", "We begin with a conversation about your goals, audience, project, timeline, and what success looks like for the work."],
+  ["Assess", "We review your manuscript or design brief, discuss what you need, and agree on the scope, deliverables, and timeline."],
+  ["Develop", "We refine your manuscript or develop your visual design, with room for discussion and feedback along the way."],
+  ["Deliver", "You receive the agreed project files and a clear handoff for your next steps."],
 ];
 
 export default function Process() {

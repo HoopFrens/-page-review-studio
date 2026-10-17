@@ -3,5 +3,6 @@ export const faqs = [
   ["How long does a line editing project take?", "Timelines vary based on manuscript length, complexity, and scheduling. Most projects receive a custom timeline after I review your manuscript and editorial goals."],
   ["Do you offer sample edits?", "Yes. Sample edits are available for qualified projects so you can understand the editorial approach before beginning a larger engagement."],
   ["What if my manuscript is unfinished?", "Line editing works best once a manuscript is complete or very close to complete, so the edit can focus on language, clarity, rhythm, and consistency."],
-  ["How do I get started?", "Begin by booking a consultation or requesting a sample edit. From there, I will review your goals, timeline, and manuscript needs before confirming the best path forward."],
+  ["Do you offer graphic design?", "Yes. Page Review Studio offers graphic design alongside line editing. Tell us what you would like to create, who it is for, and how you plan to use it. We will discuss the scope and provide a project-specific quote."],
+  ["How do I get started?", "Use the inquiry form to tell us about your manuscript or graphic design project. We will review your goals, timeline, and needs before confirming the next steps. For line editing, you can also request a sample edit."],
 ];
