@@ -9,10 +9,10 @@ const links = [["About", "/#about"], ["Services", "/#services"], ["Process", "/#
 export default function Navigation() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-50 border-b border-brand-tan/70 bg-brand-cream/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-brand-tan/70 bg-white/95 backdrop-blur-md">
       <div className="container-page flex h-20 items-center justify-between gap-6">
         <a href="/" aria-label="Page Review Studio home">
-          <PageReviewLogo decorative preload className="w-[10.75rem] sm:w-[13rem]" />
+          <PageReviewLogo decorative preload className="w-[12rem] sm:w-[16rem]" />
         </a>
         <nav className="hidden items-center gap-7 xl:flex" aria-label="Primary navigation">
           {links.map(([label, href]) => <a key={href} href={href} className="group relative text-[.66rem] font-semibold uppercase tracking-[.14em] text-brand-brown"><span>{label}</span><span className="absolute -bottom-2 left-0 h-px w-0 bg-brand-blue transition-all group-hover:w-full" /></a>)}

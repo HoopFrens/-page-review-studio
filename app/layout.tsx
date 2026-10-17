@@ -17,40 +17,38 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://pagereviewstudio.com"),
-  title: "Page Review Studio | Boutique Editorial Studio for Authors & Experts",
+  title: "Page Review Studio | Line Editing & Graphic Design",
   description:
-    "Page Review Studio provides manuscript development, developmental editing, proofreading, ghostwriting, and editorial strategy for authors, memoirists, founders, and thought leaders.",
+    "Page Review Studio offers thoughtful line editing and graphic design. Refine your manuscript or request a custom quote for your next design project.",
   keywords: [
     "editorial studio",
-    "developmental editing",
-    "manuscript development",
-    "ghostwriting",
+    "line editing",
+    "graphic design",
     "memoir editing",
-    "proofreading",
     "book editing",
     "thought leadership content",
     "self publishing editor",
   ],
   openGraph: {
-    title: "Page Review Studio | Boutique Editorial Studio",
-    description: "An editorial partner for people with something worth saying.",
+    title: "Page Review Studio | Line Editing & Graphic Design",
+    description: "Thoughtful line editing and graphic design for ideas worth sharing.",
     type: "website",
     locale: "en_US",
     siteName: "Page Review Studio",
     images: [
       {
-        url: "/opengraph-image.png",
-        width: 1200,
-        height: 630,
+        url: "/brand/page-review-studio-logo.png",
+        width: 2578,
+        height: 772,
         alt: "Page Review Studio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Page Review Studio | Boutique Editorial Studio",
-    description: "An editorial partner for people with something worth saying.",
-    images: ["/opengraph-image.png"],
+    title: "Page Review Studio | Line Editing & Graphic Design",
+    description: "Thoughtful line editing and graphic design for ideas worth sharing.",
+    images: ["/brand/page-review-studio-logo.png"],
   },
 };
 

@@ -7,10 +7,10 @@ export default function Hero() {
     <section id="top" className="relative overflow-hidden border-b border-brand-tan">
       <div className="container-page grid min-h-[calc(100vh-5rem)] items-center gap-12 py-16 lg:grid-cols-[1.18fr_.82fr] lg:py-20">
         <Reveal>
-          <p className="eyebrow mb-8 flex items-center gap-4 text-brand-blue"><span className="h-px w-10 bg-brand-gold" /> Boutique Editorial Studio</p>
-          <h1 className="display max-w-4xl text-[clamp(4rem,8vw,7.5rem)] text-brand-brown">From rough draft to work worth remembering.</h1>
-          <p className="mt-8 max-w-2xl text-base leading-8 text-brand-brown/70 sm:text-lg">Editorial guidance, manuscript development, and writing partnership for authors and experts who want their ideas presented at their highest level.</p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row"><Button href="#contact">Book a consultation</Button><Button href="#sample-edits" variant="outline">Request a sample edit</Button></div>
+          <p className="eyebrow mb-8 flex items-center gap-4 text-brand-blue"><span className="h-px w-10 bg-brand-gold" /> Editorial & Graphic Design Studio</p>
+          <h1 className="display max-w-4xl text-[clamp(4rem,8vw,7.5rem)] text-brand-brown">Words refined. Ideas brought to life.</h1>
+          <p className="mt-8 max-w-2xl text-base leading-8 text-brand-brown/70 sm:text-lg">Line editing and graphic design for people who want their words and visuals to communicate with clarity, care, and purpose.</p>
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row"><Button href="#contact">Book a consultation</Button><Button href="#services" variant="outline">Explore our services</Button></div>
           <p className="mt-10 max-w-xl border-l border-brand-gold pl-5 font-serif text-xl italic text-brand-brown/80">For authors, founders, memoirists, and subject matter experts with something worth saying.</p>
         </Reveal>
         <Reveal className="relative mx-auto w-full max-w-lg lg:ml-auto">

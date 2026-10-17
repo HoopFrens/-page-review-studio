@@ -18,12 +18,12 @@ const labels: Record<keyof LeadPayload, string> = {
   name: "Name",
   email: "Email",
   project: "Project type",
-  status: "Manuscript status",
+  status: "Project stage",
   wordCount: "Estimated word count",
   timeline: "Desired timeline",
   budget: "Budget range",
   message: "Message",
-  projectLink: "Manuscript or project link",
+  projectLink: "Project or reference link",
 };
 
 function clean(value: unknown) {
