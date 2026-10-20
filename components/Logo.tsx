@@ -1,5 +1,6 @@
 import Image from "next/image";
 import logo from "@/public/brand/page-review-studio-logo.png";
+import { logoArtwork } from "@/lib/brand";
 
 type LogoProps = {
   framed?: boolean;
@@ -16,13 +17,23 @@ export default function PageReviewLogo({
 }: LogoProps) {
   return (
     <span className={`inline-flex shrink-0 items-center justify-center bg-white ${framed ? "p-4" : ""} ${className}`}>
-      <Image
-        src={logo}
-        alt={decorative ? "" : "Page Review Studio"}
-        className="h-auto w-full object-contain"
-        sizes="(max-width: 640px) 208px, 288px"
-        preload={preload}
-      />
+      <span
+        className="relative block w-full overflow-hidden"
+        style={{ aspectRatio: `${logoArtwork.viewport.width} / ${logoArtwork.viewport.height}` }}
+      >
+        <Image
+          src={logo}
+          alt={decorative ? "" : "Page Review Studio"}
+          className="absolute h-auto max-w-none"
+          style={{
+            width: `${logoArtwork.width / logoArtwork.viewport.width * 100}%`,
+            left: `${-logoArtwork.viewport.x / logoArtwork.viewport.width * 100}%`,
+            top: `${-logoArtwork.viewport.y / logoArtwork.viewport.height * 100}%`,
+          }}
+          sizes="(max-width: 640px) 420px, 504px"
+          preload={preload}
+        />
+      </span>
     </span>
   );
 }
