@@ -37,9 +37,9 @@ export const metadata: Metadata = {
     siteName: "Page Review Studio",
     images: [
       {
-        url: "/brand/page-review-studio-logo.png",
-        width: 2578,
-        height: 772,
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
         alt: "Page Review Studio",
       },
     ],
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Page Review Studio | Line Editing & Graphic Design",
     description: "Thoughtful line editing and graphic design for ideas worth sharing.",
-    images: ["/brand/page-review-studio-logo.png"],
+    images: ["/opengraph-image"],
   },
 };
 
