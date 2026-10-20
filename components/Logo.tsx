@@ -30,7 +30,7 @@ export default function PageReviewLogo({
             left: `${-logoArtwork.viewport.x / logoArtwork.viewport.width * 100}%`,
             top: `${-logoArtwork.viewport.y / logoArtwork.viewport.height * 100}%`,
           }}
-          sizes="(max-width: 640px) 420px, 504px"
+          sizes={`(max-width: 640px) ${Math.ceil(240 * logoArtwork.width / logoArtwork.viewport.width)}px, ${Math.ceil(288 * logoArtwork.width / logoArtwork.viewport.width)}px`}
           preload={preload}
         />
       </span>

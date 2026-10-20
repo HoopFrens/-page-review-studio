@@ -1,9 +1,9 @@
 // The supplied PNG stays unchanged. This viewport removes only its transparent
 // perimeter, with 32 source pixels of breathing room around the artwork.
 export const logoArtwork = {
-  width: 4425,
-  height: 835,
-  viewport: { x: 978, y: 93, width: 2529, height: 702 },
+  width: 2996,
+  height: 1006,
+  viewport: { x: 67, y: 74, width: 2819, height: 797 },
 };
 
 export function logoGeometry(width: number) {
