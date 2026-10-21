@@ -59,7 +59,7 @@ const imageBuilder = createImageUrlBuilder(sanityClient);
 const coverToneClasses = {
   espresso: "bg-brand-brown",
   terracotta: "bg-brand-blue",
-  bronze: "bg-brand-gold",
+  bronze: "bg-brand-tan",
 } as const;
 
 function hasImage(image?: SanityImageValue): image is SanityImageValue & {

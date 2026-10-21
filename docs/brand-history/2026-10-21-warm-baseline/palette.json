@@ -1,0 +1,28 @@
+{
+  "description": "Page Review Studio website warm palette preserved before the Warm Blues update",
+  "preservedOn": "2026-10-21",
+  "baselineCommit": "095556ea9fcd9c006049b7730ac1a27b7dbc344c",
+  "previousProductionDeployment": "dpl_2k5L9vkrqiWzeSSVRLp83NnuKNEg",
+  "colors": {
+    "brand-blue": "#105E8D",
+    "brand-gold": "#C8872A",
+    "brand-brown": "#37190F",
+    "brand-tan": "#DDB795",
+    "brand-cream": "#FCE9DF",
+    "brand-linen": "#F4DDCD",
+    "white": "#FFFFFF"
+  },
+  "logo": {
+    "file": "page-review-studio-logo.png",
+    "originalPath": "public/brand/page-review-studio-logo.png",
+    "sha256": "f2a4799884d3bd9507af53020dd061b21b35a2fd3f7a8f29f7df97a26c87c7c0",
+    "width": 2996,
+    "height": 1006,
+    "viewport": {
+      "x": 67,
+      "y": 74,
+      "width": 2819,
+      "height": 797
+    }
+  }
+}

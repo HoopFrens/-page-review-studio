@@ -22,7 +22,7 @@ export default async function ReviewsPage() {
       <main>
         <section className="bg-brand-brown py-20 text-brand-cream sm:py-28">
           <div className="container-page">
-            <p className="eyebrow text-brand-gold">Book reviews</p>
+            <p className="eyebrow text-brand-tan">Book reviews</p>
             <h1 className="display mt-6 max-w-4xl text-6xl sm:text-7xl lg:text-8xl">The full review lives here.</h1>
             <p className="mt-8 max-w-2xl text-base leading-8 text-brand-tan">
               I share shorter reflections across social platforms. This archive is the lasting home for each complete review.
@@ -35,7 +35,7 @@ export default async function ReviewsPage() {
               <article key={post.slug} className="flex h-full flex-col border-t hairline pt-7">
                 <div
                   className={`${post.coverTone} relative mb-7 flex overflow-hidden p-3 ${
-                    post.coverTone === "bg-brand-gold" ? "text-brand-brown" : "text-brand-cream"
+                    post.coverTone === "bg-brand-tan" ? "text-brand-brown" : "text-brand-cream"
                   }`}
                 >
                   {post.heroImage ? (
@@ -53,15 +53,15 @@ export default async function ReviewsPage() {
                     </div>
                   ) : (
                     <div className="flex min-h-56 w-full flex-col justify-between p-4">
-                      <p className="eyebrow opacity-70">{post.category}</p>
+                      <p className="eyebrow">{post.category}</p>
                       <div>
                         <h2 className="font-serif text-4xl leading-tight">{post.bookTitle}</h2>
-                        <p className="mt-2 text-sm opacity-70">by {post.author}</p>
+                        <p className="mt-2 text-sm">by {post.author}</p>
                       </div>
                     </div>
                   )}
                 </div>
-                <div className="flex flex-wrap gap-x-5 gap-y-2 text-[.62rem] font-semibold uppercase tracking-[.15em] text-brand-brown/45">
+                <div className="flex flex-wrap gap-x-5 gap-y-2 text-[.62rem] font-semibold uppercase tracking-[.15em] text-brand-muted">
                   <span>{formatReviewDate(post.date)}</span>
                   <span>{post.readingTime}</span>
                 </div>
@@ -70,7 +70,7 @@ export default async function ReviewsPage() {
                     {post.title}
                   </Link>
                 </h3>
-                <p className="mt-4 grow leading-7 text-brand-brown/65">{post.excerpt}</p>
+                <p className="mt-4 grow leading-7 text-brand-muted">{post.excerpt}</p>
                 <Link
                   href={`/reviews/${post.slug}`}
                   className="mt-7 text-[.67rem] font-semibold uppercase tracking-[.16em] text-brand-blue transition-colors hover:text-brand-brown"

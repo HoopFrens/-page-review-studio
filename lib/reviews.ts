@@ -152,7 +152,7 @@ export const reviewPosts: ReviewPost[] = [
       "This full review considers how The Light We Carry turns personal reflection into practical encouragement without losing warmth.",
     pullQuote:
       "Its most persuasive moments are the ones that trade certainty for steadiness.",
-    coverTone: "bg-brand-gold",
+    coverTone: "bg-brand-tan",
     readingTime: "5 min read",
     body: paragraphsToPortableText([
       "The Light We Carry is built around a generous question: what helps a person remain whole while moving through uncertainty? The book does not pretend that confidence is a permanent state. Instead, it treats steadiness as a practice.",
