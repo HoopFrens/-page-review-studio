@@ -31,7 +31,7 @@ export default async function Reviews() {
             <article className="mt-14 grid overflow-hidden border-y hairline lg:min-h-[34rem] lg:grid-cols-[minmax(0,1.08fr)_minmax(0,.92fr)]">
               <Link
                 href={`/reviews/${featured.slug}`}
-                className={`${featured.coverTone} group relative block overflow-hidden border-b hairline text-brand-cream lg:border-b-0 lg:border-r`}
+                className={`${featured.coverTone} group relative block overflow-hidden border-b hairline ${featured.coverTone === "bg-brand-tan" ? "text-brand-brown" : "text-brand-cream"} lg:border-b-0 lg:border-r`}
                 aria-label={`Read ${featured.bookTitle} review`}
               >
                 {featured.heroImage ? (
@@ -50,16 +50,16 @@ export default async function Reviews() {
                 ) : (
                   <div className="flex min-h-80 w-full flex-col justify-between p-5">
                     <div>
-                      <p className="eyebrow text-brand-cream/70">{featured.category}</p>
+                      <p className="eyebrow">{featured.category}</p>
                       <h3 className="mt-8 font-serif text-4xl leading-tight">{featured.bookTitle}</h3>
-                      <p className="mt-2 text-sm text-brand-cream/70">by {featured.author}</p>
+                      <p className="mt-2 text-sm">by {featured.author}</p>
                     </div>
-                    <p className="font-serif text-2xl leading-8 text-brand-cream/90">"{featured.pullQuote}"</p>
+                    <p className="font-serif text-2xl leading-8">"{featured.pullQuote}"</p>
                   </div>
                 )}
               </Link>
               <div className="flex flex-col justify-center px-6 py-10 sm:px-10 lg:px-12 xl:px-16">
-                <div className="flex flex-wrap gap-x-5 gap-y-2 text-[.62rem] font-semibold uppercase tracking-[.15em] text-brand-brown/45">
+                <div className="flex flex-wrap gap-x-5 gap-y-2 text-[.62rem] font-semibold uppercase tracking-[.15em] text-brand-muted">
                   <span>{formatReviewDate(featured.date)}</span>
                   <span>{featured.readingTime}</span>
                 </div>
@@ -68,7 +68,7 @@ export default async function Reviews() {
                     {featured.title}
                   </Link>
                 </h3>
-                <p className="mt-6 max-w-2xl leading-8 text-brand-brown/70">{featured.excerpt}</p>
+                <p className="mt-6 max-w-2xl leading-8 text-brand-muted">{featured.excerpt}</p>
                 <Link
                   href={`/reviews/${featured.slug}`}
                   className="mt-8 inline-flex text-[.67rem] font-semibold uppercase tracking-[.16em] text-brand-blue transition-colors hover:text-brand-brown"
@@ -83,7 +83,7 @@ export default async function Reviews() {
           {recent.map((post) => (
             <Reveal key={post.slug}>
               <article className="h-full border-t hairline pt-7">
-                <div className="flex flex-wrap gap-x-5 gap-y-2 text-[.62rem] font-semibold uppercase tracking-[.15em] text-brand-brown/45">
+                <div className="flex flex-wrap gap-x-5 gap-y-2 text-[.62rem] font-semibold uppercase tracking-[.15em] text-brand-muted">
                   <span>{post.category}</span>
                   <span>{formatReviewDate(post.date)}</span>
                 </div>
@@ -92,7 +92,7 @@ export default async function Reviews() {
                     {post.bookTitle}
                   </Link>
                 </h3>
-                <p className="mt-4 leading-7 text-brand-brown/65">{post.excerpt}</p>
+                <p className="mt-4 leading-7 text-brand-muted">{post.excerpt}</p>
               </article>
             </Reveal>
           ))}

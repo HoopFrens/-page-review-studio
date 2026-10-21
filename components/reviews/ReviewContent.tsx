@@ -16,7 +16,7 @@ function BodyParagraph({ children, lead = false }: { children: ReactNode; lead?:
         lead
           ? "first-letter:float-left first-letter:mr-3 first-letter:font-serif first-letter:text-7xl first-letter:leading-[.8] first-letter:text-brand-blue"
           : ""
-      } mb-7 text-lg leading-[1.9] text-brand-brown/75`}
+      } mb-7 text-lg leading-[1.9] text-brand-muted`}
     >
       {children}
     </p>
@@ -114,14 +114,14 @@ function FloatingBookCover({ post }: { post: ReviewPost }) {
       ) : (
         <div
           className={`review-floating-cover-fallback ${post.coverTone} ${
-            post.coverTone === "bg-brand-gold" ? "text-brand-brown" : "text-brand-cream"
+            post.coverTone === "bg-brand-tan" ? "text-brand-brown" : "text-brand-cream"
           }`}
           aria-hidden="true"
         >
-          <p className="eyebrow opacity-70">{post.category}</p>
+          <p className="eyebrow">{post.category}</p>
           <div>
             <p className="font-serif text-4xl leading-none">{post.bookTitle}</p>
-            <p className="mt-4 text-xs opacity-70">by {post.author}</p>
+            <p className="mt-4 text-xs">by {post.author}</p>
           </div>
           <p className="font-serif text-xl leading-7 opacity-90">“{post.pullQuote}”</p>
         </div>
@@ -131,7 +131,7 @@ function FloatingBookCover({ post }: { post: ReviewPost }) {
           Book details
         </h2>
         <p className="mt-2 font-serif text-2xl leading-7 text-brand-brown">{post.bookTitle}</p>
-        <p className="mt-2 text-xs text-brand-brown/70">by {post.author}</p>
+        <p className="mt-2 text-xs text-brand-muted">by {post.author}</p>
       </div>
     </aside>
   );

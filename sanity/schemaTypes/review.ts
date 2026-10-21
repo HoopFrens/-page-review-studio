@@ -243,9 +243,9 @@ export const reviewType = defineType({
       description: "Used only when a review does not yet have artwork.",
       options: {
         list: [
-          { title: "Brand brown", value: "espresso" },
-          { title: "Brand blue", value: "terracotta" },
-          { title: "Editorial gold", value: "bronze" },
+          { title: "Deep slate", value: "espresso" },
+          { title: "Warm blue", value: "terracotta" },
+          { title: "Sky blue", value: "bronze" },
         ],
         layout: "radio",
       },

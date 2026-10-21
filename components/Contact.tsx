@@ -73,14 +73,14 @@ function ContactForm() {
             intro="Tell us about your manuscript or graphic design project. You will receive a thoughtful response within two business days."
           />
           <div className="mt-10 border-t hairline pt-6">
-            <p className="eyebrow text-brand-brown/40">Response time</p>
+            <p className="eyebrow text-brand-muted">Response time</p>
             <p className="mt-2 font-serif text-2xl text-brand-brown">Within two business days.</p>
           </div>
         </div>
         {sent ? (
           <div role="status" className="self-start border border-brand-gold bg-brand-linen p-10">
             <p className="font-serif text-4xl text-brand-brown">Thank you.</p>
-            <p className="mt-4 leading-8 text-brand-brown/70">Your inquiry has been received. I will respond within two business days.</p>
+            <p className="mt-4 leading-8 text-brand-muted">Your inquiry has been received. I will respond within two business days.</p>
           </div>
         ) : (
           <form onSubmit={submit} className="grid gap-x-8 gap-y-7 sm:grid-cols-2" aria-label="Project inquiry form">
@@ -93,11 +93,11 @@ function ContactForm() {
             {isEditing ? (
               <label className="text-xs uppercase tracking-wider sm:col-span-2">Budget range<select required className="field" name="budget"><option value="">Select one</option>{budgets.map(x => <option key={x}>{x}</option>)}</select></label>
             ) : (
-              <label className="text-xs uppercase tracking-wider sm:col-span-2">Budget <span className="normal-case tracking-normal text-brand-brown/45">(optional)</span><input className="field" name="budget" placeholder="Share a budget, or leave blank to request a quote" /><span className="mt-2 block normal-case tracking-normal text-brand-brown/65">Graphic design is quoted individually based on your project.</span></label>
+              <label className="text-xs uppercase tracking-wider sm:col-span-2">Budget <span className="normal-case tracking-normal text-brand-muted">(optional)</span><input className="field" name="budget" placeholder="Share a budget, or leave blank to request a quote" /><span className="mt-2 block normal-case tracking-normal text-brand-muted">Graphic design is quoted individually based on your project.</span></label>
             )}
-            <label className="text-xs uppercase tracking-wider sm:col-span-2">Project or reference link <span className="normal-case tracking-normal text-brand-brown/45">(optional)</span><input className="field" name="projectLink" placeholder="Google Drive, Dropbox, or website link" /></label>
+            <label className="text-xs uppercase tracking-wider sm:col-span-2">Project or reference link <span className="normal-case tracking-normal text-brand-muted">(optional)</span><input className="field" name="projectLink" placeholder="Google Drive, Dropbox, or website link" /></label>
             <label className="text-xs uppercase tracking-wider sm:col-span-2">Tell us about the work<textarea required className="field min-h-32 resize-y" name="message" rows={4} placeholder={isEditing ? "Tell us about your manuscript and the support you need." : "What would you like to create, who is it for, and how will it be used?"} /></label>
-            <label className="flex gap-3 text-sm leading-6 text-brand-brown/65 sm:col-span-2"><input required type="checkbox" className="mt-1 h-4 w-4 accent-brand-blue" /><span>I give Page Review Studio permission to review the material submitted for the purpose of responding to this inquiry.</span></label>
+            <label className="flex gap-3 text-sm leading-6 text-brand-muted sm:col-span-2"><input required type="checkbox" className="mt-1 h-4 w-4 accent-brand-blue" /><span>I give Page Review Studio permission to review the material submitted for the purpose of responding to this inquiry.</span></label>
             {error ? <p role="alert" className="text-sm text-brand-blue sm:col-span-2">{error}</p> : null}
             <button disabled={sending} type="submit" className="min-h-12 bg-brand-blue px-7 py-3 text-[.67rem] font-semibold uppercase tracking-[.16em] text-brand-cream transition-colors hover:bg-brand-brown disabled:cursor-wait disabled:opacity-65 sm:col-span-2 sm:justify-self-start">{sending ? "Sending..." : "Submit inquiry"}</button>
           </form>

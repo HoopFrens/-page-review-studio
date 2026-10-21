@@ -10,7 +10,7 @@ export default function EmailCapture() {
         <div>
           <p className="eyebrow text-brand-blue">The studio letter</p>
           <h2 className="display mt-4 text-5xl text-brand-brown sm:text-6xl">Notes From The Margin</h2>
-          <p className="mt-4 text-brand-brown/65">
+          <p className="mt-4 text-brand-muted">
             Occasional insights on writing, editing, publishing, and manuscript development.
           </p>
         </div>
@@ -41,7 +41,7 @@ export default function EmailCapture() {
                 Subscribe
               </button>
             </div>
-            <p className="mt-3 text-xs text-brand-brown/50">No noise. Just thoughtful notes for serious writers.</p>
+            <p className="mt-3 text-xs text-brand-muted">No noise. Just thoughtful notes for serious writers.</p>
           </form>
         )}
       </div>

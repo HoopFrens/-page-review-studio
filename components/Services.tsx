@@ -21,12 +21,12 @@ export default function Services() {
                 <div className="flex items-start justify-between gap-6">
                   <span className="eyebrow text-brand-blue">{service.number}</span>
                   <div className="border-l border-brand-tan pl-6 text-right">
-                    <span className="eyebrow text-brand-brown/40">Investment</span>
+                    <span className="eyebrow text-brand-muted">Investment</span>
                     <p className="mt-3 font-serif text-2xl text-brand-brown">{service.investment}</p>
                   </div>
                 </div>
                 <h3 className="mt-12 font-serif text-4xl text-brand-brown sm:text-5xl">{service.name}</h3>
-                <p className="mt-6 text-lg leading-8 text-brand-brown/70">{service.description}</p>
+                <p className="mt-6 text-lg leading-8 text-brand-muted">{service.description}</p>
                 <div className="my-10 grid gap-6 border-t border-brand-tan pt-8 text-sm leading-7 sm:grid-cols-2">
                   <p><span className="mb-2 block text-[.58rem] font-semibold uppercase tracking-[.16em] text-brand-blue">Ideal for</span>{service.ideal}</p>
                   <p><span className="mb-2 block text-[.58rem] font-semibold uppercase tracking-[.16em] text-brand-blue">{service.id === "graphic-design" ? "Planning your project" : "Includes"}</span>{service.deliverables}</p>

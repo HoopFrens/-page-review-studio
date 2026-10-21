@@ -4,15 +4,17 @@
 
 :root {
   color-scheme: light;
-  --brand-blue: #105e8d;
-  --brand-gold: #c8872a;
-  --brand-brown: #37190f;
-  --brand-tan: #ddb795;
-  --brand-cream: #fce9df;
-  --brand-linen: #f4ddcd;
-  --brand-gold-rgb: 200 135 42;
-  --brand-brown-rgb: 55 25 15;
-  --brand-cream-rgb: 252 233 223;
+  --brand-blue: #4563a0;
+  --brand-gold: #85a0d3;
+  --brand-brown: #414758;
+  --brand-tan: #b4ddf6;
+  --brand-cream: #f6f8fc;
+  --brand-linen: #eaf0f9;
+  --brand-muted: #596579;
+  --brand-tan-rgb: 180 221 246;
+  --brand-gold-rgb: 133 160 211;
+  --brand-brown-rgb: 65 71 88;
+  --brand-cream-rgb: 246 248 252;
 }
 
 * { box-sizing: border-box; }
@@ -94,7 +96,7 @@ a, button, input, select, textarea { outline-color: var(--brand-blue); outline-o
 }
 
 .review-screening-back-link {
-  color: var(--brand-gold);
+  color: var(--brand-tan);
   font-size: .67rem;
   font-weight: 600;
   letter-spacing: .16em;
@@ -110,7 +112,7 @@ a, button, input, select, textarea { outline-color: var(--brand-blue); outline-o
   flex-wrap: wrap;
   gap: 18px;
   margin-top: 28px;
-  color: rgb(var(--brand-gold-rgb) / .9);
+  color: var(--brand-tan);
   font-size: .62rem;
   font-weight: 600;
   letter-spacing: .15em;
@@ -309,7 +311,7 @@ a, button, input, select, textarea { outline-color: var(--brand-blue); outline-o
 
 .review-screening-scene-label p {
   margin: 0;
-  color: var(--brand-gold);
+  color: var(--brand-tan);
 }
 
 .review-screening-scene-label span {
@@ -452,8 +454,12 @@ a, button, input, select, textarea { outline-color: var(--brand-blue); outline-o
   padding: .8rem 0; color: var(--brand-brown); transition: border-color .2s ease;
 }
 .field:focus { border-color: var(--brand-blue); outline: 0; }
-.field::placeholder { color: rgb(var(--brand-brown-rgb) / .48); }
+.field::placeholder { color: var(--brand-muted); opacity: 1; }
 select.field { border-radius: 0; }
+
+#sample-edits .field { border-bottom-color: rgb(var(--brand-tan-rgb) / .65); }
+#sample-edits .field:focus { border-bottom-color: var(--brand-tan); }
+#sample-edits .field::placeholder { color: var(--brand-tan); }
 
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s ease; }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }

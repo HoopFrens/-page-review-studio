@@ -7,8 +7,8 @@ export default function Footer() {
     <footer className="bg-brand-brown py-14 text-brand-cream">
       <div className="container-page">
         <div className="grid gap-10 border-b border-brand-gold/40 pb-12 sm:grid-cols-2 lg:grid-cols-[1fr_auto]">
-          <div>
-            <PageReviewLogo framed className="w-[17rem] sm:w-[20rem] max-w-full" />
+          <div className="min-w-0">
+            <PageReviewLogo framed className="w-full max-w-[20rem] sm:max-w-[24rem]" />
             <p className="mt-6 max-w-sm font-serif text-2xl text-brand-tan">
               Thoughtful editing and graphic design for ideas worth sharing.
             </p>
