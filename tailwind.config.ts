@@ -6,15 +6,16 @@ export default {
     extend: {
       // Legacy keys retain compatibility with saved review themes. See docs/brand-history.
       colors: {
-        "brand-blue": "#4563A0",
-        "brand-gold": "#85A0D3",
-        "brand-brown": "#414758",
-        "brand-tan": "#B4DDF6",
-        "brand-cream": "#F6F8FC",
-        "brand-linen": "#EAF0F9",
-        "brand-muted": "#596579",
-        "brand-logo": "#5979BC",
-        "brand-steel": "#8494AD",
+        "brand-blue": "#516A9B",
+        "brand-gold": "#FEC262",
+        "brand-brown": "#363C48",
+        "brand-tan": "#B4DBF5",
+        "brand-cream": "#FFF3E1",
+        // Quiet alternate surface: 20% official sky blue over 80% official cream.
+        "brand-linen": "#F0EEE5",
+        "brand-muted": "#363C48",
+        "brand-logo": "#516A9B",
+        "brand-steel": "#85A0D3",
       },
       fontFamily: {
         serif: ["var(--font-cormorant)", "Georgia", "serif"],
