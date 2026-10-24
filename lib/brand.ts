@@ -1,12 +1,12 @@
-// Preserve the supplied Warm Blues PNG byte-for-byte, including its transparency.
+// Preserve the supplied official website PNG byte-for-byte, including its transparency.
 export const logoArtwork = {
-  width: 2996,
-  height: 354,
-  viewport: { x: 0, y: 0, width: 2996, height: 354 },
+  width: 10528,
+  height: 1352,
+  viewport: { x: 182, y: 167, width: 10266, height: 1122 },
 };
 
 // The browser icon shows the four-square mark from the same source artwork.
-export const logoMarkViewport = { x: 42, y: 21, width: 255, height: 269 };
+export const logoMarkViewport = { x: 106, y: 267, width: 760, height: 760 };
 
 export function logoGeometry(width: number, viewport = logoArtwork.viewport) {
   const scale = width / viewport.width;

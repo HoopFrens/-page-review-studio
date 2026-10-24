@@ -1,0 +1,65 @@
+{
+  "officialColors": [
+    "#FEC262",
+    "#FFF3E1",
+    "#516A9B",
+    "#363C48",
+    "#85A0D3",
+    "#B4DBF5"
+  ],
+  "legacyTokenMapping": {
+    "brand-blue": "#516A9B",
+    "brand-gold": "#FEC262",
+    "brand-brown": "#363C48",
+    "brand-tan": "#B4DBF5",
+    "brand-cream": "#FFF3E1",
+    "brand-linen": "#F0EEE5",
+    "brand-muted": "#363C48",
+    "brand-logo": "#516A9B",
+    "brand-steel": "#85A0D3"
+  },
+  "derivedSurface": {
+    "token": "brand-linen",
+    "hex": "#F0EEE5",
+    "formula": "20% #B4DBF5 + 80% #FFF3E1, sRGB channels rounded to nearest integer"
+  },
+  "logo": {
+    "sourceName": "codex-clipboard-cb3ec12b-3bc0-4850-ac32-ac0b1852d68b.png",
+    "width": 10528,
+    "height": 1352,
+    "sha256": "eefb05444ac9d85cd620b21305ed9d6bad42678b0dfd7e2ffbd7faeb812c5f9a",
+    "solidArtworkColors": [
+      "#516B9C",
+      "#B4DDF6",
+      "#85A0D3",
+      "#363C49"
+    ],
+    "artworkBounds": {
+      "x": 246,
+      "y": 231,
+      "width": 10138,
+      "height": 994
+    },
+    "viewport": {
+      "x": 182,
+      "y": 167,
+      "width": 10266,
+      "height": 1122
+    },
+    "markViewport": {
+      "x": 106,
+      "y": 267,
+      "width": 760,
+      "height": 760
+    }
+  },
+  "contrastRatios": {
+    "creamOnBlue": 4.93,
+    "creamOnSlate": 10.1,
+    "skyOnSlate": 7.59,
+    "goldOnSlate": 6.91,
+    "blueOnDerivedSurface": 4.65,
+    "blueOnSky": 3.7,
+    "slateOnPeriwinkle": 4.2
+  }
+}

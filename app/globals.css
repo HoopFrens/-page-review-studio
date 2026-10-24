@@ -4,17 +4,19 @@
 
 :root {
   color-scheme: light;
-  --brand-blue: #4563a0;
-  --brand-gold: #85a0d3;
-  --brand-brown: #414758;
-  --brand-tan: #b4ddf6;
-  --brand-cream: #f6f8fc;
-  --brand-linen: #eaf0f9;
-  --brand-muted: #596579;
-  --brand-tan-rgb: 180 221 246;
-  --brand-gold-rgb: 133 160 211;
-  --brand-brown-rgb: 65 71 88;
-  --brand-cream-rgb: 246 248 252;
+  --brand-blue: #516a9b;
+  --brand-gold: #fec262;
+  --brand-brown: #363c48;
+  --brand-tan: #b4dbf5;
+  --brand-cream: #fff3e1;
+  --brand-linen: #f0eee5;
+  --brand-muted: #363c48;
+  --brand-steel: #85a0d3;
+  --brand-steel-rgb: 133 160 211;
+  --brand-tan-rgb: 180 219 245;
+  --brand-gold-rgb: 254 194 98;
+  --brand-brown-rgb: 54 60 72;
+  --brand-cream-rgb: 255 243 225;
 }
 
 * { box-sizing: border-box; }
@@ -39,7 +41,7 @@ a, button, input, select, textarea { outline-color: var(--brand-blue); outline-o
 .section-space { padding-block: clamp(5rem, 10vw, 9rem); }
 .eyebrow { font-size: .67rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
 .display { font-family: var(--font-cormorant), Georgia, serif; font-weight: 500; line-height: .95; letter-spacing: -.035em; }
-.hairline { border-color: rgb(var(--brand-gold-rgb) / .45); }
+.hairline { border-color: rgb(var(--brand-steel-rgb) / .5); }
 
 /* Book reviews — Screening Room */
 .review-screening-hero {
@@ -191,7 +193,7 @@ a, button, input, select, textarea { outline-color: var(--brand-blue); outline-o
 .review-tag-index {
   border-block: 1px solid rgb(var(--brand-gold-rgb) / .4);
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, .22), transparent 44%),
+    linear-gradient(135deg, rgb(var(--brand-cream-rgb) / .22), transparent 44%),
     var(--brand-linen);
 }
 
@@ -264,7 +266,7 @@ a, button, input, select, textarea { outline-color: var(--brand-blue); outline-o
   inset: 0;
   background:
     radial-gradient(circle at 31% 52%, rgb(var(--brand-gold-rgb) / .18), transparent 34%),
-    repeating-linear-gradient(105deg, rgba(255, 255, 255, .008) 0 1px, transparent 1px 4px);
+    repeating-linear-gradient(105deg, rgb(var(--brand-cream-rgb) / .008) 0 1px, transparent 1px 4px);
   content: "";
   pointer-events: none;
 }
@@ -272,7 +274,7 @@ a, button, input, select, textarea { outline-color: var(--brand-blue); outline-o
 .review-screening-scene--reverse::before {
   background:
     radial-gradient(circle at 69% 52%, rgb(var(--brand-gold-rgb) / .18), transparent 34%),
-    repeating-linear-gradient(105deg, rgba(255, 255, 255, .008) 0 1px, transparent 1px 4px);
+    repeating-linear-gradient(105deg, rgb(var(--brand-cream-rgb) / .008) 0 1px, transparent 1px 4px);
 }
 
 .review-screening-scene::after {
@@ -450,15 +452,16 @@ a, button, input, select, textarea { outline-color: var(--brand-blue); outline-o
 }
 
 .field {
-  width: 100%; border: 0; border-bottom: 1px solid rgb(var(--brand-brown-rgb) / .35); background: transparent;
+  width: 100%; border: 0; border-bottom: 1px solid var(--brand-blue); background: transparent;
   padding: .8rem 0; color: var(--brand-brown); transition: border-color .2s ease;
 }
-.field:focus { border-color: var(--brand-blue); outline: 0; }
+.field:focus { border-color: var(--brand-blue); outline: 2px solid var(--brand-blue); outline-offset: 4px; }
 .field::placeholder { color: var(--brand-muted); opacity: 1; }
 select.field { border-radius: 0; }
 
 #sample-edits .field { border-bottom-color: rgb(var(--brand-tan-rgb) / .65); }
-#sample-edits .field:focus { border-bottom-color: var(--brand-tan); }
+#sample-edits .field:focus { border-bottom-color: var(--brand-gold); }
+#sample-edits :focus-visible, footer :focus-visible { outline-color: var(--brand-gold); }
 #sample-edits .field::placeholder { color: var(--brand-tan); }
 
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s ease; }

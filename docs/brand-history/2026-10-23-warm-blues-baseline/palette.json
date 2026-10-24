@@ -1,0 +1,103 @@
+{
+  "capturedFromCommit": "c40b6d91f2c6fe68a017717d87b9f2ae44919370",
+  "capturedFor": "2026-10-23 official website palette update",
+  "colors": {
+    "brand-blue": "#4563A0",
+    "brand-gold": "#85A0D3",
+    "brand-brown": "#414758",
+    "brand-tan": "#B4DDF6",
+    "brand-cream": "#F6F8FC",
+    "brand-linen": "#EAF0F9",
+    "brand-muted": "#596579",
+    "brand-logo": "#5979BC",
+    "brand-steel": "#8494AD"
+  },
+  "logo": {
+    "sourceName": "Warm Blues Logo.png",
+    "width": 2996,
+    "height": 354,
+    "sha256": "990b9f477f9e62e1d3114af652d19c0da1a156588ee82d154d9d3dee9a537e6d"
+  },
+  "sourceFiles": [
+    {
+      "path": "public/brand/page-review-studio-logo.png",
+      "sha256": "990b9f477f9e62e1d3114af652d19c0da1a156588ee82d154d9d3dee9a537e6d",
+      "archivePath": "source/public/brand/page-review-studio-logo.png"
+    },
+    {
+      "path": "tailwind.config.ts",
+      "sha256": "5872a512d94f99e5016265b51824b237febde3843d11149e90465078bfeae5c0",
+      "archivePath": "source/tailwind.config.ts.txt"
+    },
+    {
+      "path": "app/globals.css",
+      "sha256": "20344f9db0272c62e0ac9b76a6d8cf0b910bbdc170dc5bd6c74af81f264071b9",
+      "archivePath": "source/app/globals.css.txt"
+    },
+    {
+      "path": "lib/brand.ts",
+      "sha256": "7cbd12510f469861c903534cbeb36d5e56a411b77ed18af11553872bb01d4df6",
+      "archivePath": "source/lib/brand.ts.txt"
+    },
+    {
+      "path": "components/Logo.tsx",
+      "sha256": "50295029737895e952c52232851d23ee9a9d2b0fc8c7d1578098f36aa9fddb0b",
+      "archivePath": "source/components/Logo.tsx.txt"
+    },
+    {
+      "path": "components/Navigation.tsx",
+      "sha256": "80f9f30e1aac3c4316b760aaa925bfd9279efd876d28faa2030c1032e91afbad",
+      "archivePath": "source/components/Navigation.tsx.txt"
+    },
+    {
+      "path": "components/Footer.tsx",
+      "sha256": "619d567651423cde7f56fca1dc36f246568242f92e60c4a56e0d36029bfa5ac1",
+      "archivePath": "source/components/Footer.tsx.txt"
+    },
+    {
+      "path": "components/Button.tsx",
+      "sha256": "582bd8ffe6849958316a053271d51b4c97cc1e225157f2f2c843118dbe724457",
+      "archivePath": "source/components/Button.tsx.txt"
+    },
+    {
+      "path": "components/Hero.tsx",
+      "sha256": "842f09f87ca5dff6f4f029841b0563a9ca9f3367412fa3d007f57e96c77236bf",
+      "archivePath": "source/components/Hero.tsx.txt"
+    },
+    {
+      "path": "components/SectionHeading.tsx",
+      "sha256": "7d1fbadd8c1eb26e96df566449137f25e29b8bd4ec14f9af0921aa19b0b38efd",
+      "archivePath": "source/components/SectionHeading.tsx.txt"
+    },
+    {
+      "path": "components/SampleEdits.tsx",
+      "sha256": "f50546f2bff377e93c349629df97e540b3862c60ed385845f4d0240dc402e6c6",
+      "archivePath": "source/components/SampleEdits.tsx.txt"
+    },
+    {
+      "path": "app/icon.tsx",
+      "sha256": "a7b46578a019d6d9e9aecc864afecae649b005a27582b05a060887412aaaa63b",
+      "archivePath": "source/app/icon.tsx.txt"
+    },
+    {
+      "path": "app/apple-icon.tsx",
+      "sha256": "80e737f881c9c6abc1ae328622ec6fedeb2cd9166ab840ad56d0b1749fc49c8c",
+      "archivePath": "source/app/apple-icon.tsx.txt"
+    },
+    {
+      "path": "app/opengraph-image.tsx",
+      "sha256": "0647fb9546228f267a3bd32f422aad09b54f068d470b86298a5fd0ef4a9e18d5",
+      "archivePath": "source/app/opengraph-image.tsx.txt"
+    },
+    {
+      "path": "app/api/leads/route.ts",
+      "sha256": "4fff179fcf197ed82a4295c51fcde6f4750baa4fde55dc55ce22c8a2cefcb9a7",
+      "archivePath": "source/app/api/leads/route.ts.txt"
+    },
+    {
+      "path": "sanity/schemaTypes/review.ts",
+      "sha256": "b80902df55320075612b2d26e52ef98caba030e3a59d954a29f60931be37abbe",
+      "archivePath": "source/sanity/schemaTypes/review.ts.txt"
+    }
+  ]
+}

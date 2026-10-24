@@ -16,7 +16,7 @@ export default function PageReviewLogo({
   className = "",
 }: LogoProps) {
   return (
-    <span className={`inline-flex shrink-0 items-center justify-center bg-white ${framed ? "p-4" : ""} ${className}`}>
+    <span className={`inline-flex shrink-0 items-center justify-center bg-brand-cream ${framed ? "p-4" : ""} ${className}`}>
       <span
         className="relative block w-full overflow-hidden"
         style={{ aspectRatio: `${logoArtwork.viewport.width} / ${logoArtwork.viewport.height}` }}

@@ -11,7 +11,7 @@ export default async function OpenGraphImage() {
   const logo = await readFile(join(process.cwd(), "public/brand/page-review-studio-logo.png"));
   const geometry = logoGeometry(1040);
   return new ImageResponse(
-    <div style={{ display: "flex", width: "100%", height: "100%", alignItems: "center", justifyContent: "center", background: "white" }}>
+    <div style={{ display: "flex", width: "100%", height: "100%", alignItems: "center", justifyContent: "center", background: "#FFF3E1" }}>
       <div style={{ display: "flex", position: "relative", width: 1040, height: geometry.height, overflow: "hidden" }}>
         <img
           src={`data:image/png;base64,${logo.toString("base64")}`}
