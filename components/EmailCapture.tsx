@@ -5,7 +5,7 @@ import { useState, type FormEvent } from "react";
 export default function EmailCapture() {
   const [sent, setSent] = useState(false);
   return (
-    <section className="border-y border-brand-tan bg-brand-linen">
+    <section className="border-y border-brand-blue/40 bg-brand-linen">
       <div className="container-page grid gap-8 py-16 lg:grid-cols-[1fr_.85fr] lg:items-end">
         <div>
           <p className="eyebrow text-brand-blue">The studio letter</p>

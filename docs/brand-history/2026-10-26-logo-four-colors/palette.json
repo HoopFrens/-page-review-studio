@@ -1,0 +1,26 @@
+{
+  "source": "public/brand/page-review-studio-logo.png",
+  "sourceSha256": "89c675a0a77efbf91752980046762c521def3991a065b3b48e83b7c4bc6c8e40",
+  "previousProductionCommit": "642306a32b82cb9eb4908447b2725e9992ae88b8",
+  "colors": {
+    "cream": "#FEF5E3",
+    "gold": "#FEC262",
+    "blue": "#516B9C",
+    "slate": "#363C49"
+  },
+  "previousColors": {
+    "blue": "#516A9B",
+    "gold": "#FEC262",
+    "slate": "#363C48",
+    "sky": "#B4DBF5",
+    "cream": "#FFF3E1",
+    "linen": "#F0EEE5",
+    "periwinkle": "#85A0D3"
+  },
+  "contrast": {
+    "creamOnBlue": 4.929,
+    "creamOnSlate": 10.205,
+    "slateOnGold": 6.901,
+    "goldOnBlueLargeTextOnly": 3.333
+  }
+}
