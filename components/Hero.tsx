@@ -4,7 +4,7 @@ import Reveal from "./Reveal";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden border-b border-brand-tan">
+    <section id="top" className="relative overflow-hidden border-b border-brand-gold">
       <div className="container-page grid min-h-[calc(100vh-5rem)] items-center gap-12 py-16 lg:grid-cols-[1.18fr_.82fr] lg:py-20">
         <Reveal>
           <p className="eyebrow mb-8 flex items-center gap-4 text-brand-blue"><span className="h-px w-10 bg-brand-gold" /> Editorial & Graphic Design Studio</p>

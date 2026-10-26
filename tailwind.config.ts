@@ -4,18 +4,17 @@ export default {
   content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "./components/**/*.{js,ts,jsx,tsx,mdx}", "./lib/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
-      // Legacy keys retain compatibility with saved review themes. See docs/brand-history.
+      // Four opaque colors sampled from the current logo. Legacy keys preserve saved review themes.
       colors: {
-        "brand-blue": "#516A9B",
+        "brand-blue": "#516B9C",
         "brand-gold": "#FEC262",
-        "brand-brown": "#363C48",
-        "brand-tan": "#B4DBF5",
-        "brand-cream": "#FFF3E1",
-        // Quiet alternate surface: 20% official sky blue over 80% official cream.
-        "brand-linen": "#F0EEE5",
-        "brand-muted": "#363C48",
-        "brand-logo": "#516A9B",
-        "brand-steel": "#85A0D3",
+        "brand-brown": "#363C49",
+        "brand-tan": "#FEF5E3",
+        "brand-cream": "#FEF5E3",
+        "brand-linen": "#FEF5E3",
+        "brand-muted": "#363C49",
+        "brand-logo": "#363C49",
+        "brand-steel": "#516B9C",
       },
       fontFamily: {
         serif: ["var(--font-cormorant)", "Georgia", "serif"],

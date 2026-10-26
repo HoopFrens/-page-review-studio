@@ -244,8 +244,8 @@ export const reviewType = defineType({
       options: {
         list: [
           { title: "Deep slate", value: "espresso" },
-          { title: "Warm blue", value: "terracotta" },
-          { title: "Sky blue", value: "bronze" },
+          { title: "Blue", value: "terracotta" },
+          { title: "Cream", value: "bronze" },
         ],
         layout: "radio",
       },

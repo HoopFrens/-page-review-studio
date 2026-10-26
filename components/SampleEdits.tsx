@@ -61,7 +61,7 @@ export default function SampleEdits() {
                   <label className="text-xs uppercase tracking-wider text-brand-tan sm:col-span-2">What would you like reviewed? <span className="normal-case tracking-normal text-brand-tan">(optional)</span><textarea name="message" className="field min-h-24 resize-y !text-brand-cream" rows={3} /></label>
                 </div>
                 {error ? <p role="alert" className="mt-5 text-sm text-brand-tan">{error}</p> : null}
-                <button disabled={sending} className="mt-8 min-h-12 border border-brand-cream bg-brand-cream px-7 py-3 text-[.67rem] font-semibold uppercase tracking-[.16em] text-brand-brown transition-colors hover:border-brand-gold hover:bg-brand-tan disabled:cursor-wait disabled:opacity-65" type="submit">{sending ? "Sending..." : "Request sample edit"}</button>
+                <button disabled={sending} className="mt-8 min-h-12 border border-brand-cream bg-brand-cream px-7 py-3 text-[.67rem] font-semibold uppercase tracking-[.16em] text-brand-brown transition-colors hover:border-brand-gold hover:bg-brand-gold disabled:cursor-wait disabled:opacity-65" type="submit">{sending ? "Sending..." : "Request sample edit"}</button>
                 <p className="mt-5 text-xs text-brand-tan">Your writing will be treated with discretion and care.</p>
               </>
             )}

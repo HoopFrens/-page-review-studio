@@ -123,7 +123,7 @@ function FloatingBookCover({ post }: { post: ReviewPost }) {
             <p className="font-serif text-4xl leading-none">{post.bookTitle}</p>
             <p className="mt-4 text-xs">by {post.author}</p>
           </div>
-          <p className="font-serif text-xl leading-7 opacity-90">“{post.pullQuote}”</p>
+          <p className="font-serif text-xl leading-7">“{post.pullQuote}”</p>
         </div>
       )}
       <div className="mt-6">

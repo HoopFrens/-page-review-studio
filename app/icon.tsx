@@ -10,7 +10,7 @@ export default async function Icon() {
   const logo = await readFile(join(process.cwd(), "public/brand/page-review-studio-logo.png"));
   const geometry = logoGeometry(208, logoMarkViewport);
   return new ImageResponse(
-    <div style={{ display: "flex", width: "100%", height: "100%", alignItems: "center", justifyContent: "center", background: "#FFF3E1" }}>
+    <div style={{ display: "flex", width: "100%", height: "100%", alignItems: "center", justifyContent: "center", background: "#FEF5E3" }}>
       <div style={{ display: "flex", position: "relative", width: 208, height: geometry.height, overflow: "hidden" }}>
         <img
           src={`data:image/png;base64,${logo.toString("base64")}`}

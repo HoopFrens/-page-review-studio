@@ -15,7 +15,7 @@ export default function Footer() {
           </div>
           <nav className="grid grid-cols-2 gap-x-10 gap-y-4 self-end text-[.65rem] font-semibold uppercase tracking-[.15em] text-brand-tan sm:grid-cols-3 lg:grid-cols-6" aria-label="Footer navigation">
             {links.map(([label, href]) => (
-              <a key={href} className="transition-colors hover:text-brand-cream" href={href}>{label}</a>
+              <a key={href} className="transition-colors hover:text-brand-gold" href={href}>{label}</a>
             ))}
           </nav>
         </div>
