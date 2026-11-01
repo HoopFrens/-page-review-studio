@@ -467,6 +467,19 @@ select.field { border-radius: 0; }
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s ease; }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
+/* Share content rows across neighboring service cards, including wrapped prices. */
+@media (min-width: 1024px) {
+  .service-cards { row-gap: 0; }
+  .service-card-reveal,
+  .service-card {
+    display: grid;
+    grid-row: span 5;
+    grid-template-rows: subgrid;
+    min-width: 0;
+  }
+  .service-card-reveal { padding-bottom: 2rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }

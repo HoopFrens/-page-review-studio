@@ -15,13 +15,13 @@ export default function Services() {
           />
         </Reveal>
         <p className="mt-8 max-w-3xl text-sm leading-7 text-brand-muted">Editorial rates are in U.S. dollars. Per-word rates are starting prices, subject to the stated minimum project fee. Final quotes depend on manuscript length, condition, complexity, and scope.</p>
-        <div className="mt-16 grid gap-8 lg:grid-cols-2">
+        <div className="service-cards mt-16 grid gap-8 lg:grid-cols-2">
           {services.map((service) => (
-            <Reveal key={service.id} className="h-full">
-              <article id={service.id} className="flex h-full flex-col border-y hairline py-10 md:px-5 lg:py-12">
-                <div className="flex items-start justify-between gap-6">
+            <Reveal key={service.id} className="service-card-reveal h-full">
+              <article id={service.id} className="service-card flex h-full flex-col border-y hairline py-10 md:px-5 lg:py-12">
+                <div className="grid grid-cols-[2rem_minmax(0,1fr)] items-start gap-6">
                   <span className="eyebrow text-brand-blue">{service.number}</span>
-                  <div className="border-l border-brand-steel/50 pl-6 text-right">
+                  <div className="border-l border-brand-steel/50 pl-6 text-left">
                     <span className="eyebrow text-brand-muted">Investment</span>
                     <p className="mt-3 font-serif text-2xl text-brand-brown">{service.investment}</p>{"priceNote" in service ? <p className="mt-2 text-sm text-brand-muted">{service.priceNote}</p> : null}
                   </div>
