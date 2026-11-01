@@ -1,16 +1,9 @@
+import { editorialServices } from "./editorial-services";
+
 export const services = [
+  ...editorialServices,
   {
-    number: "01",
-    id: "line-editing",
-    action: "Discuss your manuscript",
-    name: "Line Editing",
-    description: "A sentence-level editorial pass focused on clarity, rhythm, word choice, flow, consistency, and preserving the writer's voice while making each page read with more precision.",
-    ideal: "Authors with a complete manuscript who want polished prose before publication, submission, or a final proofread.",
-    deliverables: "Edited manuscript, margin notes, consistency review, and a brief editorial summary of recurring patterns.",
-    investment: "Starting at $2,500",
-  },
-  {
-    number: "02",
+    number: "07",
     id: "graphic-design",
     name: "Graphic Design",
     description: "Thoughtful visual design that brings your ideas into focus. We work with you to create a look and feel that supports your message and speaks to your audience.",

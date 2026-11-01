@@ -11,9 +11,10 @@ export default function Services() {
           <SectionHeading
             eyebrow="Ways to work together"
             title="Care for the words. Intention in the design."
-            intro="From refining a manuscript to shaping a visual idea, choose the support your project needs."
+            intro="Editorial support for every stage of your story, alongside custom graphic design. Explore the services, then tell me what you need."
           />
         </Reveal>
+        <p className="mt-8 max-w-3xl text-sm leading-7 text-brand-muted">Editorial rates are in U.S. dollars. Per-word rates are starting prices, subject to the stated minimum project fee. Final quotes depend on manuscript length, condition, complexity, and scope.</p>
         <div className="mt-16 grid gap-8 lg:grid-cols-2">
           {services.map((service) => (
             <Reveal key={service.id} className="h-full">
@@ -22,16 +23,19 @@ export default function Services() {
                   <span className="eyebrow text-brand-blue">{service.number}</span>
                   <div className="border-l border-brand-steel/50 pl-6 text-right">
                     <span className="eyebrow text-brand-muted">Investment</span>
-                    <p className="mt-3 font-serif text-2xl text-brand-brown">{service.investment}</p>
+                    <p className="mt-3 font-serif text-2xl text-brand-brown">{service.investment}</p>{"priceNote" in service ? <p className="mt-2 text-sm text-brand-muted">{service.priceNote}</p> : null}
                   </div>
                 </div>
-                <h3 className="mt-12 font-serif text-4xl text-brand-brown sm:text-5xl">{service.name}</h3>
+                <h3 className="mt-8 font-serif text-4xl text-brand-brown sm:text-5xl">{service.name}</h3>
                 <p className="mt-6 text-lg leading-8 text-brand-muted">{service.description}</p>
                 <div className="my-10 grid gap-6 border-t border-brand-steel/50 pt-8 text-sm leading-7 sm:grid-cols-2">
                   <p><span className="mb-2 block text-[.58rem] font-semibold uppercase tracking-[.16em] text-brand-blue">Ideal for</span>{service.ideal}</p>
                   <p><span className="mb-2 block text-[.58rem] font-semibold uppercase tracking-[.16em] text-brand-blue">{service.id === "graphic-design" ? "Planning your project" : "Includes"}</span>{service.deliverables}</p>
                 </div>
-                <Button href={service.id === "graphic-design" ? "?service=graphic-design#contact" : "?service=line-editing#contact"} variant="outline" className="mt-auto self-start">{service.action}</Button>
+                <div className="mt-auto flex flex-wrap items-center gap-5">
+                  <Button href={`/?service=${service.id}#contact`} variant="outline">{service.action}</Button>
+                  {service.id !== "graphic-design" ? <a href={`/services#${service.id}`} className="text-sm text-brand-blue underline underline-offset-4">Full service details</a> : null}
+                </div>
               </article>
             </Reveal>
           ))}

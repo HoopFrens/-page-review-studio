@@ -1,6 +1,6 @@
 import PageReviewLogo from "./Logo";
 
-const links = [["About", "/#about"], ["Services", "/#services"], ["Process", "/#process"], ["Reviews", "/#reviews"], ["Sample Edits", "/#sample-edits"], ["Contact", "/#contact"]];
+const links = [["About", "/#about"], ["Services", "/services"], ["Process", "/#process"], ["Reviews", "/#reviews"], ["Sample Edits", "/#sample-edits"], ["Contact", "/#contact"]];
 
 export default function Footer() {
   return (

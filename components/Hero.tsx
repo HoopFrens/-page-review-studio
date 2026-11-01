@@ -8,10 +8,10 @@ export default function Hero() {
       <div className="container-page grid min-h-[calc(100vh-5rem)] items-center gap-12 py-16 lg:grid-cols-[1.18fr_.82fr] lg:py-20">
         <Reveal>
           <p className="eyebrow mb-8 flex items-center gap-4 text-brand-blue"><span className="h-px w-10 bg-brand-gold" /> Editorial & Graphic Design Studio</p>
-          <h1 className="display max-w-4xl text-[clamp(4rem,8vw,7.5rem)] text-brand-brown">Words refined. Ideas brought to life.</h1>
-          <p className="mt-8 max-w-2xl text-base leading-8 text-brand-muted sm:text-lg">Line editing and graphic design for people who want their words and visuals to communicate with clarity, care, and purpose.</p>
+          <h1 className="display max-w-4xl text-[clamp(4rem,8vw,7.5rem)] text-brand-brown">Your story. Your voice. Stronger writing.</h1>
+          <p className="mt-8 max-w-2xl text-base leading-8 text-brand-muted sm:text-lg">Personalized editorial services for fiction and narrative nonfiction writers—from manuscript evaluation and developmental editing to prose refinement and collaborative narrative development.</p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row"><Button href="#contact">Book a consultation</Button><Button href="#services" variant="outline">Explore our services</Button></div>
-          <p className="mt-10 max-w-xl border-l border-brand-gold pl-5 font-serif text-xl italic text-brand-brown/80">For authors, founders, memoirists, and subject matter experts with something worth saying.</p>
+          <p className="mt-10 max-w-xl border-l border-brand-gold pl-5 font-serif text-xl italic text-brand-brown/80">Thoughtful attention to your story, while preserving the voice that makes your writing uniquely yours.</p>
         </Reveal>
         <Reveal className="relative mx-auto w-full max-w-lg lg:ml-auto">
           <div className="absolute -left-5 -top-5 hidden h-full w-full border border-brand-gold/60 sm:block" />
