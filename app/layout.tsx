@@ -17,21 +17,22 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://pagereviewstudio.com"),
-  title: "Page Review Studio | Line Editing & Graphic Design",
+  title: "Page Review Studio | Editorial Services & Graphic Design",
   description:
-    "Page Review Studio offers thoughtful line editing and graphic design. Refine your manuscript or request a custom quote for your next design project.",
+    "Editorial services for fiction and narrative nonfiction: manuscript evaluation, developmental and line editing, scene development, critiques, and collaborative writing. Graphic design quoted individually.",
   keywords: [
     "editorial studio",
     "line editing",
     "graphic design",
     "memoir editing",
     "book editing",
-    "thought leadership content",
+    "developmental editing",
+    "manuscript evaluation",
     "self publishing editor",
   ],
   openGraph: {
-    title: "Page Review Studio | Line Editing & Graphic Design",
-    description: "Thoughtful line editing and graphic design for ideas worth sharing.",
+    title: "Page Review Studio | Editorial Services & Graphic Design",
+    description: "Personalized editorial services and graphic design for ideas worth sharing.",
     type: "website",
     locale: "en_US",
     siteName: "Page Review Studio",
@@ -46,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Page Review Studio | Line Editing & Graphic Design",
-    description: "Thoughtful line editing and graphic design for ideas worth sharing.",
+    title: "Page Review Studio | Editorial Services & Graphic Design",
+    description: "Personalized editorial services and graphic design for ideas worth sharing.",
     images: ["/opengraph-image"],
   },
 };

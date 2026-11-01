@@ -2,12 +2,13 @@
 
 import { Suspense, useEffect, useState, type FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
+import { services } from "@/lib/services";
 import SectionHeading from "./SectionHeading";
 
-const projectTypes = ["Line editing", "Graphic design", "Not sure yet"];
+const projectTypes = [...services.map(service => service.name), "Not sure yet"];
 const designStatuses = ["Idea or brief", "Materials ready", "Updating an existing design", "Not sure yet"];
 const statuses = ["Idea or outline", "In progress", "Complete draft", "Previously edited"];
-const budgets = ["$2,500–$5,000", "$5,000–$10,000", "$10,000+", "Not sure yet"];
+const budgets = ["Under $500", "$500–$1,000", "$1,000–$2,500", "$2,500–$5,000", "$5,000–$10,000", "$10,000+", "Not sure yet"];
 
 export default function Contact() {
   return <Suspense><ContactForm /></Suspense>;
@@ -17,10 +18,11 @@ function ContactForm() {
   const searchParams = useSearchParams();
   const requestedService = searchParams.get("service");
   const [project, setProject] = useState("");
-  const isEditing = project === "Line editing";
+  const isEditing = project !== "Graphic Design";
   useEffect(() => {
-    if (requestedService === "graphic-design") setProject("Graphic design");
-    if (requestedService === "line-editing") setProject("Line editing");
+    const selected = services.find(service => service.id === requestedService);
+    if (selected) setProject(selected.name);
+    else if (requestedService === "not-sure") setProject("Not sure yet");
   }, [requestedService]);
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
@@ -69,7 +71,7 @@ function ContactForm() {
         <div>
           <SectionHeading
             eyebrow="Begin a conversation"
-            title="Let’s make your best work inevitable."
+            title="Let’s talk about your story."
             intro="Tell us about your manuscript or graphic design project. You will receive a thoughtful response within two business days."
           />
           <div className="mt-10 border-t hairline pt-6">
@@ -93,7 +95,7 @@ function ContactForm() {
             {isEditing ? (
               <label className="text-xs uppercase tracking-wider sm:col-span-2">Budget range<select required className="field" name="budget"><option value="">Select one</option>{budgets.map(x => <option key={x}>{x}</option>)}</select></label>
             ) : (
-              <label className="text-xs uppercase tracking-wider sm:col-span-2">Budget <span className="normal-case tracking-normal text-brand-muted">(optional)</span><input className="field" name="budget" placeholder="Share a budget, or leave blank to request a quote" /><span className="mt-2 block normal-case tracking-normal text-brand-muted">Graphic design is quoted individually based on your project.</span></label>
+              <label className="text-xs uppercase tracking-wider sm:col-span-2">Budget <span className="normal-case tracking-normal text-brand-muted">(optional)</span><input className="field" name="budget" placeholder="Share a budget, or leave blank to request a quote" /><span className="mt-2 block normal-case tracking-normal text-brand-muted">Projects are quoted individually based on scope.</span></label>
             )}
             <label className="text-xs uppercase tracking-wider sm:col-span-2">Project or reference link <span className="normal-case tracking-normal text-brand-muted">(optional)</span><input className="field" name="projectLink" placeholder="Google Drive, Dropbox, or website link" /></label>
             <label className="text-xs uppercase tracking-wider sm:col-span-2">Tell us about the work<textarea required className="field min-h-32 resize-y" name="message" rows={4} placeholder={isEditing ? "Tell us about your manuscript and the support you need." : "What would you like to create, who is it for, and how will it be used?"} /></label>
