@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { linkPreview } from "@/lib/link-preview";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -26,16 +27,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Review Not Found | Page Review Studio" };
   }
 
+  const description = post.seoDescription || post.socialExcerpt;
   return {
     title: post.seoTitle || `${post.bookTitle} Review | Page Review Studio`,
-    description: post.seoDescription || post.socialExcerpt,
-    openGraph: {
-      title: post.seoTitle || `${post.bookTitle} Review`,
-      description: post.seoDescription || post.socialExcerpt,
-      type: "article",
-      publishedTime: post.date,
-      images: post.heroImage ? [post.heroImage] : ["/opengraph-image"],
-    },
+    description,
+    ...linkPreview(post.seoTitle || `${post.bookTitle} Review`, description, post.date),
   };
 }
 
