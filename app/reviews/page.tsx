@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { linkPreview } from "@/lib/link-preview";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
   title: "Book Reviews | Page Review Studio",
   description:
     "Read my full-length book reviews, including craft notes, reading reflections, and complete reviews beyond social posts.",
+  ...linkPreview("Book Reviews", "Book reviews and notes on the craft of writing from Page Review Studio."),
 };
 
 export default async function ReviewsPage() {

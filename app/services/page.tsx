@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { linkPreview } from "@/lib/link-preview";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
   title: "Editorial Services & Pricing | Page Review Studio",
   description: "Explore substantive editing, line editing, partial manuscript critiques, and collaborative narrative development with clear rates and deliverables.",
   alternates: { canonical: "/services" },
+  ...linkPreview("Editorial Services & Pricing", "Explore editing services, manuscript critiques, and pricing at Page Review Studio."),
 };
 
 export default function EditorialServicesPage() {

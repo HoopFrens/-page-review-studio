@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
+import { linkPreview } from "@/lib/link-preview";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -29,27 +30,10 @@ export const metadata: Metadata = {
     "manuscript critique",
     "self publishing editor",
   ],
-  openGraph: {
-    title: "Page Review Studio | Editorial Services",
-    description: "Editorial services for fiction and narrative nonfiction writers.",
-    type: "website",
-    locale: "en_US",
-    siteName: "Page Review Studio",
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Page Review Studio",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Page Review Studio | Editorial Services",
-    description: "Editorial services for fiction and narrative nonfiction writers.",
-    images: ["/opengraph-image"],
-  },
+  ...linkPreview(
+    "Page Review Studio",
+    "Editorial services for fiction and narrative nonfiction writers.",
+  ),
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
