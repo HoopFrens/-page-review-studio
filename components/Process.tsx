@@ -3,8 +3,8 @@ import SectionHeading from "./SectionHeading";
 
 const steps = [
   ["Discover", "We begin with a conversation about your goals, audience, project, timeline, and what success looks like for the work."],
-  ["Assess", "We review your manuscript or design brief, discuss what you need, and agree on the scope, deliverables, and timeline."],
-  ["Develop", "We refine your manuscript or develop your visual design, with room for discussion and feedback along the way."],
+  ["Assess", "We review your manuscript or outline, discuss what you need, and agree on the scope, deliverables, and timeline."],
+  ["Develop", "We work through your pages, with room for discussion and feedback along the way."],
   ["Deliver", "You receive the agreed project files and a clear handoff for your next steps."],
 ];
 

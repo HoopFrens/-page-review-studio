@@ -7,64 +7,6 @@ export const editorialIntro = [
 export const editorialServices = [
   {
     "number": "01",
-    "id": "manuscript-evaluation",
-    "name": "Manuscript Evaluation",
-    "description": "A comprehensive assessment of your manuscript's strengths, challenges, and opportunities for improvement.",
-    "investment": "Starting at $0.018 per word",
-    "priceNote": "Minimum project fee: $300",
-    "paragraphs": [
-      "Sometimes, the most valuable next step isn't another round of revisions. It's understanding what your manuscript needs.",
-      "A manuscript evaluation provides an objective, big-picture assessment of your completed draft, helping you identify what's working, what isn't, and where your revision efforts will make the greatest difference."
-    ],
-    "includes": [
-      "A complete reading and evaluation of your manuscript.",
-      "Assessment of overall structure, plot development, and pacing.",
-      "Analysis of character motivations, relationships, and emotional arcs.",
-      "Evaluation of narrative voice, point of view, and consistency.",
-      "Identification of plot holes, underdeveloped scenes, narrative gaps, and unnecessary repetition.",
-      "Feedback on thematic development, emotional impact, and reader engagement.",
-      "A comprehensive editorial report outlining the manuscript's strengths and opportunities for improvement.",
-      "A prioritized revision roadmap with actionable recommendations."
-    ],
-    "deliverables": "A detailed editorial report and a clear plan for strengthening your manuscript.",
-    "ideal": "Authors who have completed a draft and want professional guidance before beginning their next revision.",
-    "notes": [
-      "This service focuses on evaluation and recommendations rather than direct changes to your manuscript."
-    ],
-    "action": "Discuss your manuscript"
-  },
-  {
-    "number": "02",
-    "id": "developmental-editing",
-    "name": "Developmental Editing",
-    "description": "Strengthen the foundation of your story, from narrative structure to character transformation.",
-    "investment": "Starting at $0.038 per word",
-    "priceNote": "Minimum project fee: $500",
-    "paragraphs": [
-      "A compelling story is more than a sequence of events. It's the relationship between what happens, why it matters, and how those experiences change the characters involved.",
-      "Developmental editing takes a deeper look at your manuscript's storytelling elements, identifying opportunities to strengthen its structure, emotional resonance, and overall narrative effectiveness.",
-      "Unlike a manuscript evaluation, developmental editing provides detailed feedback directly within your manuscript, helping you understand where and how revisions can improve the story."
-    ],
-    "includes": [
-      "In-depth evaluation of plot structure, pacing, and narrative progression.",
-      "Assessment of character development, motivation, internal conflict, and emotional arcs.",
-      "Analysis of scene purpose, sequencing, and transitions.",
-      "Identification of underdeveloped storylines, missed opportunities, and structural inconsistencies.",
-      "Evaluation of narrative stakes, conflict, and tension.",
-      "Guidance on strengthening interiority, emotional depth, and character relationships.",
-      "Assessment of narrative voice, point of view, and thematic cohesion.",
-      "Detailed manuscript annotations with specific revision recommendations.",
-      "A developmental editorial letter and prioritized revision plan."
-    ],
-    "deliverables": "An annotated manuscript, a comprehensive developmental report, and actionable guidance for revising your story.",
-    "ideal": "Authors whose manuscripts need meaningful structural or storytelling improvements before sentence-level polishing.",
-    "notes": [
-      "This service focuses on developing the story rather than extensively rewriting or polishing individual sentences."
-    ],
-    "action": "Discuss your manuscript"
-  },
-  {
-    "number": "03",
     "id": "substantive-editing",
     "name": "Substantive Editing & Scene Development",
     "description": "Take your manuscript beyond surface-level improvements with hands-on scene and prose refinement.",
@@ -72,7 +14,7 @@ export const editorialServices = [
     "priceNote": "Minimum project fee: $450",
     "paragraphs": [
       "Sometimes, a scene contains all the right elements but doesn't yet deliver the experience the author intended.",
-      "Substantive editing bridges the gap between developmental and line editing. It combines attention to the manuscript's narrative effectiveness with hands-on improvements to existing scenes, paragraphs, and prose.",
+      "Substantive editing strengthens the story through hands-on revision of existing scenes, paragraphs, and prose.",
       "Rather than simply identifying what could be strengthened, this service works directly with your written material to improve how the story unfolds on the page."
     ],
     "includes": [
@@ -94,7 +36,7 @@ export const editorialServices = [
     "action": "Discuss your manuscript"
   },
   {
-    "number": "04",
+    "number": "02",
     "id": "line-editing",
     "name": "Line Editing",
     "description": "Refine your prose while preserving the voice, style, and personality behind every word.",
@@ -125,7 +67,7 @@ export const editorialServices = [
     "action": "Discuss your manuscript"
   },
   {
-    "number": "05",
+    "number": "03",
     "id": "partial-manuscript-critique",
     "name": "First Chapter & Partial Manuscript Critique",
     "description": "Discover what's working in your opening pages—and what could make them stronger.",
@@ -148,12 +90,12 @@ export const editorialServices = [
     "deliverables": "An annotated excerpt and a written critique identifying strengths, concerns, and practical next steps.",
     "ideal": "Writers beginning a new manuscript, authors seeking feedback on their opening chapters, or those who want to experience my editorial approach before committing to a larger project.",
     "notes": [
-      "This service provides a focused critique rather than a complete line edit or full-manuscript developmental assessment."
+      "The critique focuses on the submitted excerpt."
     ],
     "action": "Discuss your manuscript"
   },
   {
-    "number": "06",
+    "number": "04",
     "id": "collaborative-narrative-development",
     "name": "Collaborative Narrative Development",
     "description": "For writers who have a story to tell and want a creative editorial partner to help bring it onto the page.",
@@ -187,7 +129,7 @@ export const editorialServices = [
 
 export const editorialClosing = [
   "That's perfectly okay.",
-  "Writers don't always need to know whether their manuscripts require developmental editing, substantive editing, or line editing before reaching out.",
+  "You can reach out at any stage, even if you're still deciding what kind of editing you need.",
   "Every project is different, and the right editorial approach depends on your manuscript's current stage, your creative goals, and the kind of support you're looking for.",
   "Let's talk about your story.",
   "Share a little about your manuscript, where you are in the writing process, and what you're hoping to accomplish. I'll help you identify the service—or combination of services—that best suits your needs.",
