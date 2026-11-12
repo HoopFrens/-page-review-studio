@@ -94,6 +94,9 @@ function ContactForm() {
             <label className="text-xs uppercase tracking-wider sm:col-span-2">Project or reference link <span className="normal-case tracking-normal text-brand-muted">(optional)</span><input className="field" name="projectLink" placeholder="Google Drive, Dropbox, or website link" /></label>
             <label className="text-xs uppercase tracking-wider sm:col-span-2">Tell us about the work<textarea required className="field min-h-32 resize-y" name="message" rows={4} placeholder="Tell us about your manuscript and the support you need." /></label>
             <label className="flex gap-3 text-sm leading-6 text-brand-muted sm:col-span-2"><input required type="checkbox" className="mt-1 h-4 w-4 accent-brand-blue" /><span>I give Page Review Studio permission to review the material submitted for the purpose of responding to this inquiry.</span></label>
+            <p className="text-sm leading-6 text-brand-muted sm:col-span-2">
+              Sharing your project details doesn’t commit you to anything. If we decide to work together, you’ll receive a written agreement and scope before any payment is requested.
+            </p>
             {error ? <p role="alert" className="text-sm text-brand-blue sm:col-span-2">{error}</p> : null}
             <button disabled={sending} type="submit" className="min-h-12 bg-brand-blue px-7 py-3 text-[.67rem] font-semibold uppercase tracking-[.16em] text-brand-cream transition-colors hover:bg-brand-brown disabled:cursor-wait disabled:opacity-65 sm:col-span-2 sm:justify-self-start">{sending ? "Sending..." : "Submit inquiry"}</button>
           </form>

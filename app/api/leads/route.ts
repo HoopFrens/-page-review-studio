@@ -64,11 +64,13 @@ async function sendEmail({
   subject,
   text,
   replyTo,
+  htmlContent,
 }: {
   to: string;
   subject: string;
   text: string;
   replyTo?: string;
+  htmlContent?: string;
 }) {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.EMAIL_FROM;
@@ -88,7 +90,7 @@ async function sendEmail({
       to: [to],
       subject,
       text,
-      html: `<div style="font-family:Arial,sans-serif;font-size:16px;line-height:1.6;color:#363C49">${htmlBlock(text)}</div>`,
+      html: `<div style="font-family:Arial,sans-serif;font-size:16px;line-height:1.6;color:#363C49">${htmlContent ?? htmlBlock(text)}</div>`,
       ...(replyTo ? { reply_to: replyTo } : {}),
     }),
   });
@@ -145,12 +147,24 @@ export async function POST(request: Request) {
     const confirmationText =
       kind === "sample-edit"
         ? `Hi ${name},\n\nThank you for requesting a sample edit from Page Review Studio. I received your request.${sampleEditLine}\n\nPage Review Studio`
-        : `Hi ${name},\n\nThank you for reaching out to Page Review Studio. I received your inquiry and will respond within two business days.\n\nPage Review Studio`;
+        : [
+            `Hi ${name},`,
+            "Thank you for reaching out. I’ve received your inquiry and will reply within two business days to discuss next steps and arrange a consultation with you.",
+            "Before we talk, it helps to have a short description of your manuscript, where you are in the writing process, and what you’d like to accomplish.",
+            "If we decide to work together, I’ll send a written agreement with your project scope, timeline, and fee before requesting payment. You’re welcome to ask me about any of the terms before you sign.",
+            "Looking forward to hearing about your story.",
+            "Krystal Williams\nPage Review Studio",
+          ].join("\n\n");
 
     await sendEmail({
       to: email,
-      subject: kind === "sample-edit" ? "Your sample edit request was received" : "Your Page Review Studio inquiry was received",
+      subject: kind === "sample-edit" ? "Your sample edit request was received" : "Your inquiry with Page Review Studio",
       text: confirmationText,
+      ...(kind === "contact" && {
+        htmlContent: confirmationText.split("\n\n").map(paragraph =>
+          `<p style="margin:0 0 12px">${escapeHtml(paragraph).replace(/\n/g, "<br>")}</p>`
+        ).join(""),
+      }),
     });
 
     return Response.json({ ok: true });
