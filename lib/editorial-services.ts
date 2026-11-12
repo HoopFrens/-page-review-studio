@@ -4,6 +4,8 @@ export const editorialIntro = [
   "Whether you're refining an early draft, strengthening an existing manuscript, or seeking collaborative support to bring your story to life, my goal is to help you communicate your vision with greater clarity, confidence, and impact—while preserving the voice that makes your writing uniquely yours."
 ];
 
+const editingPaymentNote = "A 50% deposit starts the project. For fees under $2,000, the balance is due before final files are released. Fees of $2,000 or more are paid in three installments.";
+
 export const editorialServices = [
   {
     "number": "01",
@@ -12,6 +14,7 @@ export const editorialServices = [
     "description": "Take your manuscript beyond surface-level improvements with hands-on scene and prose refinement.",
     "investment": "Starting at $0.045 per word",
     "priceNote": "Minimum project fee: $450",
+    "paymentNote": editingPaymentNote,
     "paragraphs": [
       "Sometimes, a scene contains all the right elements but doesn't yet deliver the experience the author intended.",
       "Substantive editing strengthens the story through hands-on revision of existing scenes, paragraphs, and prose.",
@@ -42,6 +45,7 @@ export const editorialServices = [
     "description": "Refine your prose while preserving the voice, style, and personality behind every word.",
     "investment": "Starting at $0.032 per word",
     "priceNote": "Minimum project fee: $300",
+    "paymentNote": editingPaymentNote,
     "paragraphs": [
       "You've developed your story. Your characters are established, your scenes are in place, and you're ready to make the writing itself as effective as possible.",
       "Line editing focuses on the craft of language—strengthening each sentence and paragraph to create a more engaging, polished, and cohesive reading experience.",
@@ -73,6 +77,7 @@ export const editorialServices = [
     "description": "Discover what's working in your opening pages—and what could make them stronger.",
     "investment": "$275 for up to 5,000 words",
     "priceNote": "Longer excerpts quoted individually.",
+    "paymentNote": "Paid in full at booking.",
     "paragraphs": [
       "Your opening chapters introduce readers to your world, establish expectations, and begin building the emotional connection that carries them through the story.",
       "A first chapter or partial manuscript critique provides focused editorial feedback on those early pages, helping you identify opportunities to strengthen your storytelling before moving further into the manuscript."
@@ -101,6 +106,7 @@ export const editorialServices = [
     "description": "For writers who have a story to tell and want a creative editorial partner to help bring it onto the page.",
     "investment": "Starting at $85 per hour",
     "priceNote": "Custom project estimates available following an initial review.",
+    "paymentNote": "A paid pilot chapter comes first. The larger project begins with a deposit, followed by an invoice at the end of each phase.",
     "paragraphs": [
       "Not every story begins with a polished manuscript. Sometimes, it begins with scattered notes, a rough outline, a collection of memories, or a few paragraphs that hold the potential for something much larger.",
       "Collaborative Narrative Development offers a more involved editorial partnership for writers seeking assistance transforming their ideas and existing material into compelling narrative prose.",
@@ -120,7 +126,7 @@ export const editorialServices = [
     "deliverables": "Newly developed or extensively revised narrative material, with deliverables and revision rounds established in a written project agreement.",
     "ideal": "Memoirists, fiction writers, and other storytellers who have a clear vision or meaningful source material but want substantial hands-on assistance shaping that material into a cohesive narrative.",
     "notes": [
-      "Because every collaborative project is different, pricing is based on the scope, complexity, and anticipated level of involvement. A paid pilot chapter or sample assignment may be recommended before beginning a larger project.",
+      "Because every collaborative project is different, pricing is based on the scope, complexity, and anticipated level of involvement. After the paid pilot chapter, you’ll receive a written estimate for the larger project.",
       "Collaborative writing arrangements include a written agreement addressing responsibilities, authorship and credit, ownership rights, revisions, and approval of the final material. For memoir and other nonfiction projects, the author remains responsible for verifying factual accuracy."
     ],
     "action": "Discuss your manuscript"
@@ -133,10 +139,15 @@ export const editorialClosing = [
   "Every project is different, and the right editorial approach depends on your manuscript's current stage, your creative goals, and the kind of support you're looking for.",
   "Let's talk about your story.",
   "Share a little about your manuscript, where you are in the writing process, and what you're hoping to accomplish. I'll help you identify the service—or combination of services—that best suits your needs.",
-  "A Note About Pricing",
+];
+
+export const pricingNotes = [
   "The rates listed above are starting prices in U.S. dollars. Final quotes are determined by manuscript length, condition, complexity, and the level of editorial involvement required.",
   "For standard per-word editing services, pricing is based on the word count of the manuscript submitted for editing. Projects involving substantial new writing, unusually extensive restructuring, or multiple editing stages may require a custom estimate.",
   "All services include a clearly defined scope of work, deliverables, and revision expectations before the project begins.",
+];
+
+export const editorialSignoff = [
   "Your story matters. Let's make every word count.",
   "Page Review Studio",
   "Books. Craft. Perspective."

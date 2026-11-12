@@ -23,7 +23,9 @@ export default function Services() {
                   <span className="eyebrow text-brand-blue">{service.number}</span>
                   <div className="border-l border-brand-steel/50 pl-6 text-left">
                     <span className="eyebrow text-brand-muted">Investment</span>
-                    <p className="mt-3 font-serif text-2xl text-brand-brown">{service.investment}</p><p className="mt-2 text-sm text-brand-muted">{service.priceNote}</p>
+                    <p className="mt-3 font-serif text-2xl text-brand-brown">{service.investment}</p>
+                    <p className="mt-2 text-sm text-brand-muted">{service.priceNote}</p>
+                    <p className="mt-2 text-sm leading-6 text-brand-muted">{service.paymentNote}</p>
                   </div>
                 </div>
                 <h3 className="mt-8 font-serif text-4xl text-brand-brown sm:text-5xl">{service.name}</h3>
