@@ -34,7 +34,7 @@ export function getReviewsSource(): ReviewsSource {
   return source;
 }
 
-async function shouldUseSanityReviews() {
+export async function shouldUseSanityReviews() {
   if (getReviewsSource() === "sanity") return true;
   if (!isSanityConfigured) return false;
 

@@ -2,6 +2,16 @@ import { defineLocations, type PresentationPluginOptions } from "sanity/presenta
 
 export const resolve: PresentationPluginOptions["resolve"] = {
   locations: {
+    essay: defineLocations({
+      select: { title: "title", slug: "slug.current", reviewSlug: "review.slug.current", bookTitle: "review.bookTitle" },
+      resolve: doc => ({
+        locations: [
+          ...(doc?.slug ? [{ title: doc.title || "Essay", href: `/essays/${doc.slug}` }] : []),
+          ...(doc?.reviewSlug ? [{ title: doc.bookTitle || "Original review", href: `/reviews/${doc.reviewSlug}` }] : []),
+          { title: "All essays", href: "/essays" },
+        ],
+      }),
+    }),
     review: defineLocations({
       select: {
         bookTitle: "bookTitle",
