@@ -11,4 +11,5 @@ export const structure: StructureResolver = (S) =>
             .title("Book Reviews")
             .defaultOrdering([{ field: "publishedOn", direction: "desc" }]),
         ),
+      S.documentTypeListItem("essay").title("Essays"),
     ]);

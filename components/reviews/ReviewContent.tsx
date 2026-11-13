@@ -1,5 +1,6 @@
 import { PortableText, type PortableTextBlock, type PortableTextComponents } from "@portabletext/react";
 import Image from "next/image";
+import Link from "next/link";
 import { Fragment, type ReactNode } from "react";
 import type { ReviewPost } from "@/lib/reviews";
 
@@ -7,6 +8,7 @@ type ReviewGraphic = NonNullable<ReviewPost["gallery"]>[number];
 
 type ReviewContentProps = {
   post: ReviewPost;
+  relatedEssays: { slug: string; title: string }[];
 };
 
 function BodyParagraph({ children, lead = false }: { children: ReactNode; lead?: boolean }) {
@@ -217,7 +219,7 @@ function ScreeningScene({ graphic, index }: { graphic: ReviewGraphic; index: num
   );
 }
 
-export default function ReviewContent({ post }: ReviewContentProps) {
+export default function ReviewContent({ post, relatedEssays }: ReviewContentProps) {
   const graphics = post.gallery ?? [];
   const sections = partitionReviewBody(post.body, graphics.length);
 
@@ -244,6 +246,20 @@ export default function ReviewContent({ post }: ReviewContentProps) {
           </Fragment>
         );
       })}
+      {relatedEssays.length > 0 && (
+        <nav aria-labelledby="beyond-the-review" className="container-page max-w-3xl border-t hairline py-12">
+          <h2 id="beyond-the-review" className="font-serif text-4xl">Beyond the Review</h2>
+          <ul className="mt-5 space-y-3">
+            {relatedEssays.map(essay => (
+              <li key={essay.slug}>
+                <Link className="text-lg text-brand-blue underline underline-offset-4" href={`/essays/${essay.slug}`}>
+                  {essay.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
       <ReviewTags tags={post.tags} />
     </div>
   );
