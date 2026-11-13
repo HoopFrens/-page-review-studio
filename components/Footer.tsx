@@ -1,6 +1,6 @@
 import PageReviewLogo from "./Logo";
 
-const links = [["About", "/#about"], ["Services", "/services"], ["Process", "/#process"], ["Reviews", "/#reviews"], ["Sample Edits", "/#sample-edits"], ["Contact", "/#contact"]];
+const links = [["About", "/#about"], ["Services", "/services"], ["Process", "/#process"], ["Reviews", "/#reviews"], ["Essays", "/essays"], ["Sample Edits", "/#sample-edits"], ["Contact", "/#contact"]];
 
 export default function Footer() {
   return (
@@ -13,7 +13,7 @@ export default function Footer() {
               Editorial services for fiction and narrative nonfiction writers.
             </p>
           </div>
-          <nav className="grid grid-cols-2 gap-x-10 gap-y-4 self-end text-[.65rem] font-semibold uppercase tracking-[.15em] text-brand-tan sm:grid-cols-3 lg:grid-cols-6" aria-label="Footer navigation">
+          <nav className="grid grid-cols-2 gap-x-10 gap-y-4 self-end text-[.65rem] font-semibold uppercase tracking-[.15em] text-brand-tan sm:grid-cols-3 lg:grid-cols-4" aria-label="Footer navigation">
             {links.map(([label, href]) => (
               <a key={href} className="transition-colors hover:text-brand-gold" href={href}>{label}</a>
             ))}
