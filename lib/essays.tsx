@@ -1,6 +1,9 @@
 export const essays = [
   {
     slug: "what-loyalty-asks-of-us",
+    categoryLabel: "PERSONAL REFLECTION",
+    companionSlug: "the-weight-of-two-promises",
+    companionIntro: "Explore how Fonda Lee brings divided loyalties to life through storytelling in",
     title: "What Loyalty Asks of Us",
     subtitle: "Beyond the Review | Jade City by Fonda Lee",
     excerpt: "Is loyalty still a virtue even when it starts to transgress your own personal values?",
@@ -25,6 +28,9 @@ export const essays = [
   },
   {
     slug: "the-weight-of-two-promises",
+    categoryLabel: "LITERARY REFLECTION / STORYTELLING CRAFT",
+    companionSlug: "what-loyalty-asks-of-us",
+    companionIntro: "Explore the tension between loyalty, personal sacrifice, and self-betrayal in",
     title: "The Weight of Two Promises",
     subtitle: "Beyond the Review | Jade City by Fonda Lee",
     excerpt: "What happens when a character's loyalties are divided?",

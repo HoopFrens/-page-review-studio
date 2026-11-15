@@ -9,6 +9,10 @@ export const essayType = defineType({
   fields: [
     defineField({ name: "title", title: "Essay title", type: "string", validation: rule => rule.required() }),
     defineField({
+      name: "categoryLabel", title: "Category label", type: "string",
+      description: "Optional. Appears above the title on the Essays page.",
+    }),
+    defineField({
       name: "slug", title: "Web address", type: "slug",
       description: "Generate the address from the title. Keep it the same after publishing so shared links continue to work.",
       options: { source: "title", slugify: toReviewSlug, maxLength: 96 },
@@ -36,6 +40,21 @@ export const essayType = defineType({
         lists: [],
         marks: { decorators: [{ title: "Bold", value: "strong" }, { title: "Italic", value: "em" }] },
       })],
+    }),
+    defineField({
+      name: "companion", title: "Companion essay", type: "reference", to: [{ type: "essay" }], weak: true,
+      options: {
+        disableNew: true,
+        filter: ({ document }) => ({
+          filter: "defined(slug.current) && !(_id in $exclude)",
+          params: { exclude: [document._id, document._id.replace(/^drafts\./, "")] },
+        }),
+      },
+    }),
+    defineField({
+      name: "companionIntro", title: "Companion link introduction", type: "string",
+      description: "Optional wording between “Continue the conversation:” and the linked essay title.",
+      hidden: ({ document }) => !document?.companion,
     }),
   ],
   preview: { select: { title: "title", subtitle: "review.bookTitle" } },

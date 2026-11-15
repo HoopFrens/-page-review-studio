@@ -40,6 +40,13 @@ export default async function EssayPage({ params }: Props) {
             {essay.body}
           </div>
           <footer className="border-t hairline pt-6">
+            {essay.companion?.slug && essay.companion.slug !== slug && (
+              <p className="mb-4 leading-7">
+                <strong className="font-medium">Continue the conversation:</strong>{" "}
+                {essay.companionIntro && `${essay.companionIntro} `}
+                <Link href={`/essays/${essay.companion.slug}`} className="text-brand-blue underline underline-offset-4">{essay.companion.title}</Link>.
+              </p>
+            )}
             <a href={essay.reviewUrl} className="font-medium text-brand-blue underline underline-offset-4">Read Krystal’s full review of <cite>{essay.bookTitle}</cite> →</a>
           </footer>
         </article>
