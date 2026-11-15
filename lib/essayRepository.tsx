@@ -10,18 +10,22 @@ import { shouldUseSanityReviews } from "./reviewRepository";
 type Summary = {
   slug: string;
   title: string;
+  categoryLabel?: string | null;
   excerpt: string;
   reviewSlug: string;
   bookTitle: string;
   author: string;
 };
 
-const fields = `title, excerpt, "slug": slug.current, "reviewSlug": review->slug.current,
+const fields = `title, categoryLabel, excerpt, "slug": slug.current, "reviewSlug": review->slug.current,
   "bookTitle": review->bookTitle, "author": review->author`;
 const essaysWithReview = '_type == "essay" && defined(slug.current) && defined(review->slug.current)';
 const listQuery = defineQuery(`*[${essaysWithReview} && ($reviewSlug == null || review->slug.current == $reviewSlug)]
   | order(publishedOn desc, slug.current desc){${fields}}`);
-const detailQuery = defineQuery(`*[${essaysWithReview} && slug.current == $slug][0]{${fields},body}`);
+const detailQuery = defineQuery(`*[${essaysWithReview} && slug.current == $slug][0]{
+  ${fields}, body, companionIntro,
+  "companion": companion->{title, "slug": select(defined(review->slug.current) => slug.current)}
+}`);
 
 async function readEssays<T>(query: string, params: Record<string, string | null>): Promise<T> {
   if ((await draftMode()).isEnabled) {
@@ -34,8 +38,8 @@ async function readEssays<T>(query: string, params: Record<string, string | null
   });
 }
 
-const localSummaries: Summary[] = localEssays.map(({ slug, title, excerpt }) => ({
-  slug, title, excerpt,
+const localSummaries: Summary[] = localEssays.map(({ slug, title, excerpt, categoryLabel }) => ({
+  slug, title, excerpt, categoryLabel,
   reviewSlug: "jade-city", bookTitle: "Jade City", author: "Fonda Lee",
 }));
 
@@ -48,9 +52,16 @@ export const getEssay = cache(async (slug: string) => {
   if (!(await shouldUseSanityReviews())) {
     const local = localEssays.find(essay => essay.slug === slug);
     const summary = localSummaries.find(essay => essay.slug === slug);
-    return local && summary ? { ...summary, reviewUrl: local.reviewUrl, body: local.body } : null;
+    return local && summary ? {
+      ...summary, reviewUrl: local.reviewUrl, body: local.body, companionIntro: local.companionIntro,
+      companion: localSummaries.find(essay => essay.slug === local.companionSlug),
+    } : null;
   }
-  const essay = await readEssays<(Summary & { body?: PortableTextBlock[] }) | null>(detailQuery, { slug });
+  const essay = await readEssays<(Summary & {
+    body?: PortableTextBlock[];
+    companionIntro?: string;
+    companion?: { title: string; slug: string | null } | null;
+  }) | null>(detailQuery, { slug });
   if (!essay) return null;
   return {
     ...essay,

@@ -51,6 +51,9 @@ export default async function EssaysPage() {
                     {group.map(essay => (
                       <li key={essay.slug}>
                         <Link href={`/essays/${essay.slug}`} className="group block py-7">
+                          {essay.categoryLabel && (
+                            <p className="mb-2 text-xs font-medium uppercase tracking-wider text-brand-blue">{essay.categoryLabel}</p>
+                          )}
                           <h3 className="font-serif text-4xl leading-tight group-hover:text-brand-blue">{essay.title}</h3>
                           <p className="mt-3 leading-7">{essay.excerpt}</p>
                           <span className="mt-4 inline-block text-sm text-brand-blue underline underline-offset-4">Read essay <span aria-hidden="true">→</span></span>
