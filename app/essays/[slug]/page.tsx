@@ -25,6 +25,10 @@ export default async function EssayPage({ params }: Props) {
   const { slug } = await params;
   const essay = await getEssay(slug);
   if (!essay) notFound();
+  const companion = essay.companion?.slug && essay.companion.slug !== slug ? essay.companion : null;
+  const reviewLink = (
+    <a href={essay.reviewUrl} className="font-medium text-brand-blue underline underline-offset-4">Read Krystal’s full review of <cite>{essay.bookTitle}</cite> →</a>
+  );
   return (
     <>
       <Navigation />
@@ -39,15 +43,17 @@ export default async function EssayPage({ params }: Props) {
           <div className="space-y-5 py-8 text-lg leading-8 [&_h2]:pt-4 [&_h2]:font-serif [&_h2]:text-4xl [&_blockquote]:border-l-2 [&_blockquote]:border-brand-gold [&_blockquote]:pl-5 [&_blockquote]:font-serif [&_blockquote]:text-2xl">
             {essay.body}
           </div>
-          <footer className="border-t hairline pt-6">
-            {essay.companion?.slug && essay.companion.slug !== slug && (
-              <p className="mb-4 leading-7">
-                <strong className="font-medium">Continue the conversation:</strong>{" "}
-                {essay.companionIntro && `${essay.companionIntro} `}
-                <Link href={`/essays/${essay.companion.slug}`} className="text-brand-blue underline underline-offset-4">{essay.companion.title}</Link>.
-              </p>
-            )}
-            <a href={essay.reviewUrl} className="font-medium text-brand-blue underline underline-offset-4">Read Krystal’s full review of <cite>{essay.bookTitle}</cite> →</a>
+          <footer className="space-y-4 border-t hairline pt-6">
+            <p className="leading-7">
+              <strong className="font-medium">Continue the conversation:</strong>{" "}
+              {companion ? (
+                <>
+                  {essay.companionIntro && `${essay.companionIntro} `}
+                  <Link href={`/essays/${companion.slug}`} className="text-brand-blue underline underline-offset-4">{companion.title}</Link>.
+                </>
+              ) : reviewLink}
+            </p>
+            {companion && <p>{reviewLink}</p>}
           </footer>
         </article>
       </main>
