@@ -13,6 +13,10 @@ export const essayType = defineType({
       description: "Optional. Appears above the title on the Essays page.",
     }),
     defineField({
+      name: "listingThumbnail", title: "Listing thumbnail", type: "image",
+      description: "Optional. Choose the artwork to show beside this essay on the Essays page.",
+    }),
+    defineField({
       name: "slug", title: "Web address", type: "slug",
       description: "Generate the address from the title. Keep it the same after publishing so shared links continue to work.",
       options: { source: "title", slugify: toReviewSlug, maxLength: 96 },

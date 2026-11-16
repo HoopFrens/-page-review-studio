@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -51,10 +52,19 @@ export default async function EssaysPage() {
                     {group.map(essay => (
                       <li key={essay.slug}>
                         <Link href={`/essays/${essay.slug}`} className="group block py-7">
-                          {essay.categoryLabel && (
-                            <p className="mb-2 text-xs font-medium uppercase tracking-wider text-brand-blue">{essay.categoryLabel}</p>
-                          )}
-                          <h3 className="font-serif text-4xl leading-tight group-hover:text-brand-blue">{essay.title}</h3>
+                          <div className="flex items-start justify-between gap-3">
+                            <div className="min-w-0">
+                              {essay.categoryLabel && (
+                                <p className="mb-2 text-xs font-medium uppercase tracking-wider text-brand-blue">{essay.categoryLabel}</p>
+                              )}
+                              <h3 className="font-serif text-4xl leading-tight group-hover:text-brand-blue">{essay.title}</h3>
+                            </div>
+                            {essay.thumbnailUrl && (
+                              <Image src={essay.thumbnailUrl} alt="" width={80} height={80}
+                                sizes="(min-width: 640px) 80px, 64px"
+                                className="size-16 shrink-0 object-contain object-top sm:size-20" />
+                            )}
+                          </div>
                           <p className="mt-3 leading-7">{essay.excerpt}</p>
                           <span className="mt-4 inline-block text-sm text-brand-blue underline underline-offset-4">Read essay <span aria-hidden="true">→</span></span>
                         </Link>
