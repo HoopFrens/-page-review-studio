@@ -11,6 +11,7 @@ type Summary = {
   slug: string;
   title: string;
   categoryLabel?: string | null;
+  thumbnailUrl?: string | null;
   excerpt: string;
   reviewSlug: string;
   bookTitle: string;
@@ -21,7 +22,7 @@ const fields = `title, categoryLabel, excerpt, "slug": slug.current, "reviewSlug
   "bookTitle": review->bookTitle, "author": review->author`;
 const essaysWithReview = '_type == "essay" && defined(slug.current) && defined(review->slug.current)';
 const listQuery = defineQuery(`*[${essaysWithReview} && ($reviewSlug == null || review->slug.current == $reviewSlug)]
-  | order(publishedOn desc, slug.current desc){${fields}}`);
+  | order(publishedOn desc, slug.current desc){${fields}, "thumbnailUrl": listingThumbnail.asset->url}`);
 const detailQuery = defineQuery(`*[${essaysWithReview} && slug.current == $slug][0]{
   ${fields}, body, companionIntro,
   "companion": companion->{title, "slug": select(defined(review->slug.current) => slug.current)}
